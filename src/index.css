@@ -2,39 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Islamic-inspired design system with warm, elegant colors */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors with warm Islamic palette */
+    --background: 35 20% 98%;
+    --foreground: 200 15% 15%;
 
+    /* Card colors with subtle warmth */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 200 15% 15%;
 
+    /* Popover colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 200 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Islamic gold and teal primary colors */
+    --primary: 185 84% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-gold: 45 85% 50%;
+    --primary-gold-foreground: 200 15% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm secondary colors */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 200 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted warm tones */
+    --muted: 35 15% 95%;
+    --muted-foreground: 200 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Elegant accent colors */
+    --accent: 160 30% 85%;
+    --accent-foreground: 200 15% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive with warm undertone */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders and inputs with warmth */
+    --border: 35 20% 90%;
+    --input: 35 20% 90%;
+    --ring: 185 84% 25%;
+
+    /* Islamic design gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(185 84% 25%), hsl(45 85% 50%));
+    --gradient-warm: linear-gradient(180deg, hsl(35 25% 98%), hsl(35 20% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(160 40% 80%), hsl(185 40% 75%));
+    
+    /* Islamic pattern colors */
+    --pattern-light: 45 85% 95%;
+    --pattern-medium: 185 30% 80%;
+    
+    /* Shadows with warm tones */
+    --shadow-warm: 0 10px 30px -10px hsl(185 84% 25% / 0.2);
+    --shadow-gold: 0 5px 20px hsl(45 85% 50% / 0.3);
+    
+    /* Animation transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --radius: 0.5rem;
 
@@ -101,5 +127,34 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* 3D flip card utilities */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .pattern-border {
+    background-image: repeating-linear-gradient(
+      45deg,
+      hsl(var(--pattern-light)),
+      hsl(var(--pattern-light)) 10px,
+      hsl(var(--pattern-medium)) 10px,
+      hsl(var(--pattern-medium)) 20px
+    );
   }
 }
