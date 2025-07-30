@@ -5,6 +5,7 @@ export interface ArabicLetter {
   transliteration: string;
   makhraj: string;
   makhrajDescription: string;
+  makhrajIllustration: string;
   characteristics: string[];
   position: {
     isolated: string;
@@ -31,6 +32,7 @@ export const arabicAlphabet: ArabicLetter[] = [
     transliteration: "ā",
     makhraj: "Al-Jawf (الجوف)",
     makhrajDescription: "The hollow/cavity - air flows freely without obstruction",
+    makhrajIllustration: "/src/assets/makhraj-hollow.jpg",
     characteristics: ["Harf Madd (Letter of prolongation)", "No sound of its own"],
     position: {
       isolated: "ا",
@@ -54,6 +56,7 @@ export const arabicAlphabet: ArabicLetter[] = [
     transliteration: "b",
     makhraj: "Ash-Shafatayn (الشفتان)",
     makhrajDescription: "The two lips - sound produced by pressing lips together",
+    makhrajIllustration: "/src/assets/makhraj-lips.jpg",
     characteristics: ["Jahr (Voiced)", "Shiddah (Stopped)", "Qalqalah"],
     position: {
       isolated: "ب",
@@ -77,6 +80,7 @@ export const arabicAlphabet: ArabicLetter[] = [
     transliteration: "t",
     makhraj: "Tooth Ridge (طرف اللسان)",
     makhrajDescription: "Tip of tongue against upper tooth ridge",
+    makhrajIllustration: "/src/assets/makhraj-tooth-ridge.jpg",
     characteristics: ["Hams (Voiceless)", "Shiddah (Stopped)"],
     position: {
       isolated: "ت",
@@ -100,6 +104,7 @@ export const arabicAlphabet: ArabicLetter[] = [
     transliteration: "th",
     makhraj: "Between teeth and tongue (بين الأسنان)",
     makhrajDescription: "Tongue tip between or against upper teeth",
+    makhrajIllustration: "/src/assets/makhraj-between-teeth.jpg",
     characteristics: ["Hams (Voiceless)", "Rikhawah (Flowing)"],
     position: {
       isolated: "ث",
@@ -123,6 +128,7 @@ export const arabicAlphabet: ArabicLetter[] = [
     transliteration: "j",
     makhraj: "Middle of tongue (وسط اللسان)",
     makhrajDescription: "Middle of tongue against soft palate",
+    makhrajIllustration: "/src/assets/makhraj-middle-tongue.jpg",
     characteristics: ["Jahr (Voiced)", "Shiddah (Stopped)", "Qalqalah"],
     position: {
       isolated: "ج",
@@ -146,6 +152,7 @@ export const arabicAlphabet: ArabicLetter[] = [
     transliteration: "ḥ",
     makhraj: "Middle of throat (وسط الحلق)",
     makhrajDescription: "Middle part of the throat",
+    makhrajIllustration: "/src/assets/makhraj-middle-throat.jpg",
     characteristics: ["Hams (Voiceless)", "Rikhawah (Flowing)"],
     position: {
       isolated: "ح",

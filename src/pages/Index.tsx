@@ -3,6 +3,7 @@ import { AlphabetCard } from "@/components/AlphabetCard";
 import { AlphabetGrid } from "@/components/AlphabetGrid";
 import { NavigationControls } from "@/components/NavigationControls";
 import { AudioPlayer } from "@/components/AudioPlayer";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Grid3X3, Volume2, Star } from "lucide-react";
 import { arabicAlphabet, ArabicLetter } from "@/data/arabicAlphabet";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/hooks/useLanguage";
 import heroBackground from "@/assets/hero-background.jpg";
 import alphabetIllustration from "@/assets/alphabet-illustration.jpg";
 import patternDecoration from "@/assets/pattern-decoration.jpg";
@@ -20,6 +22,7 @@ const Index = () => {
   const [selectedLetter, setSelectedLetter] = useState<ArabicLetter | null>(null);
   const [activeTab, setActiveTab] = useState("flashcards");
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const currentLetter = arabicAlphabet[currentLetterIndex];
 
@@ -50,10 +53,10 @@ const Index = () => {
   const handlePlaySound = useCallback(() => {
     // This will be handled by the AudioPlayer component
     toast({
-      title: "Playing pronunciation",
-      description: `Listen to the pronunciation of ${currentLetter.name}`,
+      title: t.audio.playing,
+      description: `${currentLetter.name}`,
     });
-  }, [currentLetter, toast]);
+  }, [currentLetter, toast, t]);
 
   const handleLetterSelect = useCallback((letter: ArabicLetter) => {
     const index = arabicAlphabet.findIndex(l => l.id === letter.id);
@@ -72,22 +75,22 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-primary/80"></div>
         <div className="relative z-10 container mx-auto px-4 py-16 text-center text-white">
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-between mb-6">
+            <div></div>
             <img 
               src={alphabetIllustration} 
               alt="Arabic Alphabet" 
               className="w-24 h-24 rounded-full border-4 border-primary-gold animate-float"
             />
+            <div className="flex justify-end">
+              <LanguageSwitcher />
+            </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-slide-in">
-            Arabic Alphabet Learning
+            {t.header.title}
           </h1>
-          <p className="text-xl md:text-2xl mb-2 opacity-90">
-            Master Tajweed with Makharijul Huruf
-          </p>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Learn the proper pronunciation and articulation points of each Arabic letter 
-            through interactive flashcards and detailed explanations.
+            {t.header.subtitle}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
@@ -117,7 +120,7 @@ const Index = () => {
             </TabsTrigger>
             <TabsTrigger value="grid" className="flex items-center gap-2">
               <Grid3X3 size={16} />
-              Grid View
+              {t.navigation.showAll}
             </TabsTrigger>
           </TabsList>
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Volume2, RotateCcw, BookOpen, Eye } from "lucide-react";
 import { ArabicLetter, getMakhrajColor } from "@/data/arabicAlphabet";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface AlphabetCardProps {
   letter: ArabicLetter;
@@ -14,6 +15,7 @@ interface AlphabetCardProps {
 
 export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: AlphabetCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="relative w-full max-w-md mx-auto perspective-1000">
@@ -65,7 +67,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                 className="flex items-center gap-2 hover:bg-primary-gold hover:text-white"
               >
                 <Volume2 size={16} />
-                Listen
+                {t.actions.listen}
               </Button>
               <Button
                 variant="outline"
@@ -73,7 +75,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                 className="flex items-center gap-2"
               >
                 <Eye size={16} />
-                Details
+                {t.actions.details}
               </Button>
             </div>
           </div>
@@ -89,19 +91,26 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
             {/* Header */}
             <div className="text-center border-b border-primary/20 pb-4">
               <div className="text-4xl font-bold text-primary mb-2">{letter.arabic}</div>
-              <h3 className="text-xl font-semibold text-primary">{letter.name} Details</h3>
+              <h3 className="text-xl font-semibold text-primary">{letter.name} {t.card.details}</h3>
             </div>
             
             {/* Makhraj Information */}
             <div className="space-y-3">
               <div>
-                <h4 className="font-semibold text-primary mb-1">Makhraj (Place of Articulation)</h4>
-                <p className="text-sm text-foreground/80">{letter.makhrajDescription}</p>
+                <h4 className="font-semibold text-primary mb-1">{t.card.makhraj}</h4>
+                <p className="text-sm text-foreground/80 mb-2">{letter.makhrajDescription}</p>
+                <div className="flex justify-center">
+                  <img 
+                    src={letter.makhrajIllustration} 
+                    alt={`Makhraj illustration for ${letter.name}`}
+                    className="w-32 h-32 object-cover rounded-lg border border-primary/20"
+                  />
+                </div>
               </div>
               
               {/* Characteristics */}
               <div>
-                <h4 className="font-semibold text-primary mb-2">Characteristics</h4>
+                <h4 className="font-semibold text-primary mb-2">{t.card.characteristics}</h4>
                 <div className="flex flex-wrap gap-1">
                   {letter.characteristics.map((char, index) => (
                     <Badge key={index} variant="secondary" className="text-xs">
@@ -113,7 +122,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
               
               {/* Pronunciation */}
               <div>
-                <h4 className="font-semibold text-primary mb-1">Pronunciation</h4>
+                <h4 className="font-semibold text-primary mb-1">{t.card.pronunciation}</h4>
                 <p className="text-sm text-foreground/80 mb-2">{letter.pronunciation.description}</p>
                 <div className="space-y-1">
                   {letter.pronunciation.tips.map((tip, index) => (
@@ -127,7 +136,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
               
               {/* Examples */}
               <div>
-                <h4 className="font-semibold text-primary mb-2">Examples</h4>
+                <h4 className="font-semibold text-primary mb-2">{t.card.examples}</h4>
                 <div className="space-y-2">
                   {letter.examples.map((example, index) => (
                     <div key={index} className="bg-card/50 rounded-md p-2">
@@ -153,7 +162,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                 className="flex items-center gap-2 flex-1"
               >
                 <Volume2 size={14} />
-                Pronunciation
+                {t.actions.pronunciation}
               </Button>
               <Button
                 variant="outline"
@@ -165,7 +174,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                 className="flex items-center gap-2"
               >
                 <RotateCcw size={14} />
-                Flip
+                {t.actions.flip}
               </Button>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, RotateCcw, Shuffle } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface NavigationControlsProps {
   currentIndex: number;
@@ -20,6 +21,7 @@ export const NavigationControls = ({
   onShuffle,
   isFlipped
 }: NavigationControlsProps) => {
+  const { t } = useLanguage();
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-md mx-auto">
       {/* Progress Indicator */}
@@ -37,7 +39,7 @@ export const NavigationControls = ({
           className="flex items-center gap-1"
         >
           <ChevronLeft size={16} />
-          Previous
+          {t.navigation.previous}
         </Button>
         
         <Button
@@ -47,7 +49,7 @@ export const NavigationControls = ({
           className="flex items-center gap-1"
         >
           <RotateCcw size={16} />
-          {isFlipped ? "Front" : "Details"}
+          {isFlipped ? t.actions.flip : t.actions.details}
         </Button>
         
         <Button
@@ -57,7 +59,7 @@ export const NavigationControls = ({
           className="flex items-center gap-1"
         >
           <Shuffle size={16} />
-          Shuffle
+          {t.navigation.shuffle}
         </Button>
         
         <Button
@@ -67,7 +69,7 @@ export const NavigationControls = ({
           disabled={currentIndex === totalCount - 1}
           className="flex items-center gap-1"
         >
-          Next
+          {t.navigation.next}
           <ChevronRight size={16} />
         </Button>
       </div>
