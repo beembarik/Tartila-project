@@ -140,7 +140,7 @@ const Index = () => {
 
               <Button
                 asChild
-                className="w-full bg-gradient-primary text-white hover:shadow-gold"
+                className="w-full bg-primary-gold text-white hover:shadow-gold"
                 size="lg"
               >
                 <Link to="/quiz">
