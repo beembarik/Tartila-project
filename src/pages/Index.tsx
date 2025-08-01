@@ -67,7 +67,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-primary font-semibold"
+              className="border-primary-gold text-white hover:bg-white hover:text-primary font-semibold"
             >
               <Link to="/quiz" className="flex items-center gap-2">
                 <Brain size={20} />
@@ -140,7 +140,7 @@ const Index = () => {
 
               <Button
                 asChild
-                className="w-full bg-primary-gold text-white hover:shadow-gold"
+                className="w-full bg-gradient-primary text-white hover:shadow-gold"
                 size="lg"
               >
                 <Link to="/quiz">
