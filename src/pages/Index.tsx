@@ -36,7 +36,7 @@ const Index = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Badge className="bg-primary-gold text-primary-gold-foreground px-4 py-2">
+            <Badge className="bg-white/20 text-white px-4 py-2">
               <Star className="mr-2 h-4 w-4" />
               28 Letters
             </Badge>
@@ -67,7 +67,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="bg-gradient-primary border-primary-gold text-white hover:bg-white hover:text-primary font-semibold"
+              className="bg-primary-gold border-primary-gold text-white hover:bg-white hover:text-primary font-semibold"
             >
               <Link to="/quiz" className="flex items-center gap-2">
                 <Brain size={20} />
