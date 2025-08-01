@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Grid3X3, Volume2, Star } from "lucide-react";
-import { arabicAlphabet, ArabicLetter } from "@/data/arabicAlphabet";
+import { ArabicLetter } from "@/data/arabicAlphabet";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -22,7 +22,7 @@ const Index = () => {
   const [selectedLetter, setSelectedLetter] = useState<ArabicLetter | null>(null);
   const [activeTab, setActiveTab] = useState("flashcards");
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { t, arabicAlphabet } = useLanguage();
 
   const currentLetter = arabicAlphabet[currentLetterIndex];
 
@@ -38,7 +38,7 @@ const Index = () => {
       setCurrentLetterIndex(prev => prev + 1);
       setIsCardFlipped(false);
     }
-  }, [currentLetterIndex]);
+  }, [currentLetterIndex, arabicAlphabet.length]);
 
   const handleFlip = useCallback(() => {
     setIsCardFlipped(prev => !prev);
@@ -48,7 +48,7 @@ const Index = () => {
     const randomIndex = Math.floor(Math.random() * arabicAlphabet.length);
     setCurrentLetterIndex(randomIndex);
     setIsCardFlipped(false);
-  }, []);
+  }, [arabicAlphabet.length]);
 
   const handlePlaySound = useCallback(() => {
     // This will be handled by the AudioPlayer component
@@ -64,7 +64,7 @@ const Index = () => {
     setSelectedLetter(letter);
     setIsCardFlipped(false);
     setActiveTab("flashcards");
-  }, []);
+  }, [arabicAlphabet]);
 
   return (
     <div className="min-h-screen bg-gradient-warm">
