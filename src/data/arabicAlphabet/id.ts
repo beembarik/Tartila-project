@@ -76,8 +76,8 @@ export const arabicAlphabetId: ArabicLetter[] = [
   {
     id: "tha",
     arabic: "ث",
-    name: "Tha",
-    transliteration: "th",
+    name: "Tsa",
+    transliteration: "ts",
     makhraj: "Between teeth and tongue (بين الأسنان)",
     makhrajDescription: "Ujung lidah di antara atau menyentuh gigi atas",
     makhrajIllustration: "/src/assets/makhraj-between-teeth.jpg",
