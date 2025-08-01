@@ -6,7 +6,10 @@ export const idTranslations: TranslationKeys = {
     previous: "Sebelumnya",
     next: "Selanjutnya",
     shuffle: "Acak",
-    showAll: "Tampilkan Semua"
+    showAll: "Tampilkan Semua",
+    home: "Beranda",
+    learn: "Belajar",
+    quiz: "Kuis"
   },
   
   // Card actions
@@ -42,5 +45,29 @@ export const idTranslations: TranslationKeys = {
   audio: {
     playing: "Memutar pelafalan...",
     error: "Audio tidak tersedia"
+  },
+  
+  // Quiz
+  quiz: {
+    title: "Kuis Huruf Hijaiyah",
+    subtitle: "Uji pengetahuan Anda tentang huruf-huruf Arab",
+    duolingoStyle: "Gaya Duolingo",
+    ankiStyle: "Gaya Anki",
+    question: "Huruf apakah ini?",
+    score: "Skor",
+    correct: "Benar!",
+    incorrect: "Coba lagi!",
+    nextQuestion: "Pertanyaan Selanjutnya",
+    finishQuiz: "Selesai Kuis",
+    results: "Hasil Kuis",
+    yourScore: "Skor Anda",
+    restart: "Mulai Ulang",
+    chooseAnswer: "Pilih jawaban yang benar:",
+    showAnswer: "Lihat Jawaban",
+    difficulty: "Mudah",
+    again: "Lagi",
+    hard: "Sulit",
+    good: "Bagus",
+    selectLetter: "Pilih huruf yang benar:"
   }
 };

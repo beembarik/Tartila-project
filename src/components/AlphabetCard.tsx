@@ -38,7 +38,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
           <div className="text-center space-y-6">
             {/* Arabic Letter */}
             <div className="relative">
-              <div className="text-8xl md:text-9xl font-bold text-primary animate-float">
+              <div className="text-8xl md:text-9xl font-bold text-primary animate-float font-arabic">
                 {letter.arabic}
               </div>
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-gold rounded-full animate-glow"></div>
@@ -90,7 +90,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
           <div className="space-y-4">
             {/* Header */}
             <div className="text-center border-b border-primary/20 pb-4">
-              <div className="text-4xl font-bold text-primary mb-2">{letter.arabic}</div>
+              <div className="text-4xl font-bold text-primary mb-2 font-arabic">{letter.arabic}</div>
               <h3 className="text-xl font-semibold text-primary">{letter.name} {t.card.details}</h3>
             </div>
             
