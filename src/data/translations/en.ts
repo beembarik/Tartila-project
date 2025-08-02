@@ -67,6 +67,41 @@ export const enTranslations = {
     hard: "Hard",
     good: "Good",
     selectLetter: "Select the correct letter:"
+  },
+  
+  // Index page content
+  index: {
+    heroTitle: "Arabic Alphabet Learning",
+    heroSubtitle: "Master the 28 letters with proper pronunciation and tajweed rules",
+    badges: {
+      letters: "28 Letters",
+      audio: "Audio Pronunciation", 
+      tajweed: "Tajweed Rules"
+    },
+    buttons: {
+      startLearning: "Start Learning",
+      takeQuiz: "Take Quiz"
+    },
+    sections: {
+      choosePath: "Choose Your Learning Path",
+      pathSubtitle: "Interactive study modes designed for effective Arabic learning",
+      interactiveTitle: "Interactive Learning",
+      interactiveDesc: "Study each Arabic letter with flashcards, audio pronunciation, and detailed information about makhraj and characteristics.",
+      quizTitle: "Quiz Yourself",
+      quizDesc: "Test your knowledge with interactive quizzes. Choose between Duolingo-style multiple choice or Anki-style spaced repetition."
+    },
+    features: {
+      audioTitle: "Audio Pronunciation",
+      audioDesc: "Listen to correct pronunciation of each letter with proper makharijul huruf",
+      tajweedTitle: "Tajweed Rules", 
+      tajweedDesc: "Learn the characteristics and articulation points of each Arabic letter",
+      interactiveTitle: "Interactive Learning",
+      interactiveDesc: "Engaging flashcards with detailed information and examples"
+    },
+    footer: {
+      mainText: "Master the Arabic alphabet with proper tajweed pronunciation",
+      subText: "Built with love for Arabic learners worldwide"
+    }
   }
 };
 

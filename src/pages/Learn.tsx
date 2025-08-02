@@ -92,6 +92,7 @@ const Learn = () => {
                   <AudioPlayer 
                     letterName={currentLetter.name}
                     arabicLetter={currentLetter.arabic}
+                    letterId={currentLetter.id}
                   />
                 </CardContent>
               </Card>

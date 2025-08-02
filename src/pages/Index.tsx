@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { BookOpen, Volume2, Star, Brain, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Link } from "react-router-dom";
-import heroBackground from "@/assets/hero-background.jpg";
-import alphabetIllustration from "@/assets/alphabet-illustration.jpg";
-import patternDecoration from "@/assets/pattern-decoration.jpg";
+const heroBackground = "/assets/hero-background.jpg";
+const alphabetIllustration = "/assets/alphabet-illustration.jpg";
+const patternDecoration = "/assets/pattern-decoration.jpg";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -29,24 +29,24 @@ const Index = () => {
             />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-slide-in">
-            {t.header.title}
+            {t.index.heroTitle}
           </h1>
           <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            {t.header.subtitle}
+            {t.index.heroSubtitle}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Badge className="bg-white/20 text-white px-4 py-2">
               <Star className="mr-2 h-4 w-4" />
-              28 Letters
+              {t.index.badges.letters}
             </Badge>
             <Badge className="bg-white/20 text-white px-4 py-2">
               <Volume2 className="mr-2 h-4 w-4" />
-              Audio Pronunciation
+              {t.index.badges.audio}
             </Badge>
             <Badge className="bg-white/20 text-white px-4 py-2">
               <BookOpen className="mr-2 h-4 w-4" />
-              Tajweed Rules
+              {t.index.badges.tajweed}
             </Badge>
           </div>
           
@@ -58,7 +58,7 @@ const Index = () => {
             >
               <Link to="/learn" className="flex items-center gap-2">
                 <BookOpen size={20} />
-                Start Learning
+                {t.index.buttons.startLearning}
                 <ArrowRight size={16} />
               </Link>
             </Button>
@@ -71,7 +71,7 @@ const Index = () => {
             >
               <Link to="/quiz" className="flex items-center gap-2">
                 <Brain size={20} />
-                Take Quiz
+                {t.index.buttons.takeQuiz}
                 <ArrowRight size={16} />
               </Link>
             </Button>
@@ -82,8 +82,8 @@ const Index = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">Choose Your Learning Path</h2>
-          <p className="text-lg text-muted-foreground">Interactive study modes designed for effective Arabic learning</p>
+          <h2 className="text-3xl font-bold text-primary mb-4">{t.index.sections.choosePath}</h2>
+          <p className="text-lg text-muted-foreground">{t.index.sections.pathSubtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -92,11 +92,11 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 mx-auto">
                 <BookOpen className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-2xl text-primary">Interactive Learning</CardTitle>
+              <CardTitle className="text-2xl text-primary">{t.index.sections.interactiveTitle}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground text-center">
-                Study each Arabic letter with flashcards, audio pronunciation, and detailed information about makhraj and characteristics.
+                {t.index.sections.interactiveDesc}
               </p>
               
               <div className="flex flex-wrap justify-center gap-2">
@@ -112,7 +112,7 @@ const Index = () => {
                 size="lg"
               >
                 <Link to="/learn">
-                  Start Learning
+                  {t.index.buttons.startLearning}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -124,11 +124,11 @@ const Index = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 mx-auto">
                 <Brain className="h-8 w-8 text-primary" />
               </div>
-              <CardTitle className="text-2xl text-primary">Quiz Yourself</CardTitle>
+              <CardTitle className="text-2xl text-primary">{t.index.sections.quizTitle}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground text-center">
-                Test your knowledge with interactive quizzes. Choose between Duolingo-style multiple choice or Anki-style spaced repetition.
+                {t.index.sections.quizDesc}
               </p>
               
               <div className="flex flex-wrap justify-center gap-2">
@@ -144,7 +144,7 @@ const Index = () => {
                 size="lg"
               >
                 <Link to="/quiz">
-                  Take Quiz
+                  {t.index.buttons.takeQuiz}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -158,12 +158,12 @@ const Index = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-primary">
                 <Volume2 className="h-5 w-5" />
-                Audio Pronunciation
+                {t.index.features.audioTitle}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground/80">
-                Listen to correct pronunciation of each letter with proper makharijul huruf
+                {t.index.features.audioDesc}
               </p>
             </CardContent>
           </Card>
@@ -172,12 +172,12 @@ const Index = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-primary">
                 <BookOpen className="h-5 w-5" />
-                Tajweed Rules
+                {t.index.features.tajweedTitle}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground/80">
-                Learn the characteristics and articulation points of each Arabic letter
+                {t.index.features.tajweedDesc}
               </p>
             </CardContent>
           </Card>
@@ -186,12 +186,12 @@ const Index = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Star className="h-5 w-5" />
-                Interactive Learning
+                {t.index.features.interactiveTitle}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-white/90">
-                Engaging flashcards with detailed information and examples
+                {t.index.features.interactiveDesc}
               </p>
             </CardContent>
           </Card>
@@ -209,10 +209,10 @@ const Index = () => {
             />
           </div>
           <p className="text-white/80">
-            Master the Arabic alphabet with proper tajweed pronunciation
+            {t.index.footer.mainText}
           </p>
           <p className="text-white/60 text-sm mt-2">
-            Built with love for Arabic learners worldwide
+            {t.index.footer.subText}
           </p>
         </div>
       </footer>

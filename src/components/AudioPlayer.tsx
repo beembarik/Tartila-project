@@ -6,59 +6,70 @@ import { useToast } from "@/hooks/use-toast";
 interface AudioPlayerProps {
   letterName: string;
   arabicLetter: string;
+  letterId: string;
 }
 
-export const AudioPlayer = ({ letterName, arabicLetter }: AudioPlayerProps) => {
+export const AudioPlayer = ({ letterName, arabicLetter, letterId }: AudioPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const { toast } = useToast();
 
-  // For now, we'll simulate audio playback with Text-to-Speech API
   const playPronunciation = async () => {
     if (isPlaying || isLoading) return;
 
     setIsLoading(true);
     
     try {
-      // Use Web Speech API for pronunciation if available
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(letterName);
-        utterance.lang = 'ar-SA'; // Arabic (Saudi Arabia)
-        utterance.rate = 0.7; // Slower for learning
-        utterance.pitch = 1;
-        utterance.volume = 0.8;
+      // Create audio element with the path to the MP3 file
+      const audioPath = `/assets/audio/${letterId}.mp3`;
+      
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      
+      const audio = new Audio(audioPath);
+      audioRef.current = audio;
+      
+      audio.onloadstart = () => setIsLoading(true);
+      audio.oncanplay = () => setIsLoading(false);
+      
+      audio.onplay = () => setIsPlaying(true);
+      audio.onended = () => setIsPlaying(false);
+      audio.onpause = () => setIsPlaying(false);
+      
+      audio.onerror = () => {
+        setIsLoading(false);
+        setIsPlaying(false);
         
-        utterance.onstart = () => {
-          setIsPlaying(true);
-          setIsLoading(false);
-        };
-        
-        utterance.onend = () => {
-          setIsPlaying(false);
-        };
-        
-        utterance.onerror = () => {
-          setIsPlaying(false);
-          setIsLoading(false);
+        // Fallback to Web Speech API if MP3 file is not available
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance(letterName);
+          utterance.lang = 'ar-SA';
+          utterance.rate = 0.7;
+          utterance.pitch = 1;
+          utterance.volume = 0.8;
+          
+          utterance.onstart = () => {
+            setIsPlaying(true);
+            setIsLoading(false);
+          };
+          
+          utterance.onend = () => setIsPlaying(false);
+          
+          speechSynthesis.cancel();
+          speechSynthesis.speak(utterance);
+        } else {
           toast({
             title: "Audio Error",
-            description: "Could not play pronunciation. Please try again.",
+            description: "Audio file not found and speech synthesis not supported.",
             variant: "destructive"
           });
-        };
-        
-        // Stop any currently playing speech
-        speechSynthesis.cancel();
-        speechSynthesis.speak(utterance);
-      } else {
-        setIsLoading(false);
-        toast({
-          title: "Audio Not Supported",
-          description: "Your browser doesn't support audio playback.",
-          variant: "destructive"
-        });
-      }
+        }
+      };
+      
+      await audio.play();
     } catch (error) {
       setIsLoading(false);
       setIsPlaying(false);
@@ -71,6 +82,10 @@ export const AudioPlayer = ({ letterName, arabicLetter }: AudioPlayerProps) => {
   };
 
   const stopPronunciation = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
     if ('speechSynthesis' in window) {
       speechSynthesis.cancel();
     }
