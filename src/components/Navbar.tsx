@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/hooks/useLanguage";
 import { BookOpen, Menu, X, Home, Brain } from "lucide-react";
-import alphabetIllustration from "@/assets/alphabet-illustration.jpg";
+const alphabetIllustration = "/assets/alphabet-illustration.jpg";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

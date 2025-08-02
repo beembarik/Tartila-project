@@ -5,6 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ArabicLetter } from "@/data/arabicAlphabet";
 import { Check, X, Volume2 } from "lucide-react";
+import { DuolingoQuizComplete } from "./DuolingoQuizComplete";
 
 interface DuolingoQuizProps {
   letters: ArabicLetter[];
@@ -16,6 +17,7 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
   const [questions, setQuestions] = useState<Array<{
     letter: ArabicLetter;
     options: string[];
@@ -70,9 +72,28 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
       setSelectedAnswer(null);
       setIsAnswered(false);
     } else {
-      onComplete(score);
+      setIsComplete(true);
     }
   };
+
+  const handleRestart = () => {
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+    setScore(0);
+    setIsComplete(false);
+    generateQuestions();
+  };
+
+  if (isComplete) {
+    return (
+      <DuolingoQuizComplete
+        score={score}
+        total={totalQuestions}
+        onRestart={handleRestart}
+      />
+    );
+  }
 
   if (!currentQuestion) {
     return <div>Loading...</div>;

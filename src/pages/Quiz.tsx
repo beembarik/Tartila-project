@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -12,6 +13,7 @@ const Quiz = () => {
   const [activeQuiz, setActiveQuiz] = useState<string | null>(null);
   const [quizResults, setQuizResults] = useState<{ score: number; total: number } | null>(null);
   const { t, arabicAlphabet } = useLanguage();
+  const navigate = useNavigate();
 
   const handleQuizComplete = (score: number) => {
     setQuizResults({ score, total: 10 });
@@ -98,7 +100,7 @@ const Quiz = () => {
                   {t.quiz.restart}
                 </Button>
                 <Button
-                  onClick={() => window.location.href = "/learn"}
+                  onClick={() => navigate("/learn")}
                   className="bg-gradient-primary text-white"
                 >
                   Continue Learning
