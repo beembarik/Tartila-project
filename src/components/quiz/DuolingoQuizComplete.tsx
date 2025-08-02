@@ -95,17 +95,20 @@ export const DuolingoQuizComplete = ({ score, total, onRestart }: DuolingoQuizCo
 
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-4">
-              {[...Array(3)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-6 w-6 ${
+              {[...Array(3)].map((_, i) => {
+                const delayClass = ["delay-0", "delay-100", "delay-200"][i];
+                return (
+                  <Star
+                    key={i}
+                    className={`h-6 w-6 ${
                     i < performance.stars
-                      ? `fill-current ${performance.color}`
-                      : "text-gray-300"
-                  } transition-all duration-300 delay-${i * 100}`}
-                />
-              ))}
-            </div>
+                    ? `fill-current ${performance.color}`
+            : "text-gray-300"
+        } transition-all duration-300 ${delayClass}`}
+                      />
+                );
+               })}
+             </div>
 
             <CardTitle className="text-4xl font-bold text-primary mb-2">
               Congratulations!
