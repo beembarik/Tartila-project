@@ -5,6 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ArabicLetter } from "@/data/arabicAlphabet";
 import { Check, X, Volume2 } from "lucide-react";
+import { DuolingoQuizComplete } from "./DuolingoQuizComplete";
 
 interface DuolingoQuizProps {
   letters: ArabicLetter[];
@@ -16,6 +17,7 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
   const [questions, setQuestions] = useState<
     Array<{
       letter: ArabicLetter;
@@ -32,6 +34,13 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
       generateQuestions();
     }
   }, [letters]);
+
+  // Use a useEffect hook to call onComplete only once when the quiz is finished
+  useEffect(() => {
+    if (isComplete) {
+      onComplete(score);
+    }
+  }, [isComplete, score, onComplete]);
 
   const generateQuestions = () => {
     const shuffledLetters = [...letters].sort(() => Math.random() - 0.5);
@@ -71,16 +80,38 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
       setSelectedAnswer(null);
       setIsAnswered(false);
     } else {
-      // Quiz finished, notify parent and pass the final score
-      onComplete(score);
+      // Quiz is finished. Set the local state to complete.
+      // The useEffect hook will handle notifying the parent on the next render.
+      setIsComplete(true);
     }
   };
 
-  // The loading state and rendering logic for questions remains the same
+  const handleRestart = () => {
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+    setScore(0);
+    setIsComplete(false);
+    generateQuestions();
+  };
+
+  // Render the loading state first
   if (!questions.length) {
     return <div>Loading...</div>;
   }
 
+  // Then, render the completion screen if the quiz is complete
+  if (isComplete) {
+    return (
+      <DuolingoQuizComplete
+        score={score}
+        total={totalQuestions}
+        onRestart={handleRestart}
+      />
+    );
+  }
+
+  // Finally, render the quiz questions
   const currentQuestion = questions[currentQuestionIndex];
   const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
@@ -88,6 +119,104 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       {/* ... (rest of the component's JSX remains the same) ... */}
+      <div className="space-y-2">
+        <div className="flex justify-between text-sm text-muted-foreground">
+          <span>
+            {currentQuestionIndex + 1} / {totalQuestions}
+          </span>
+          <span>
+            {t.quiz.score}: {score}
+          </span>
+        </div>
+        <Progress value={progress} className="h-3" />
+      </div>
+
+      <Card className="border-2 border-primary/20">
+        <CardContent className="p-8 text-center">
+          <h2 className="text-xl font-semibold mb-6 text-primary">
+            {t.quiz.chooseAnswer}
+          </h2>
+
+          <div className="mb-8">
+            <div className="text-8xl font-arabic text-primary mb-4">
+              {currentQuestion.letter.arabic}
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-muted-foreground hover:text-primary"
+            >
+              <Volume2 size={16} className="mr-2" />
+              Listen
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {currentQuestion.options.map((option, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                className={`h-16 text-lg transition-all duration-300 ${
+                  selectedAnswer === option
+                    ? isCorrect
+                      ? "bg-green-100 border-green-500 text-green-700"
+                      : "bg-red-100 border-red-500 text-red-700"
+                    : isAnswered && option === currentQuestion.correctAnswer
+                    ? "bg-green-100 border-green-500 text-green-700"
+                    : "hover:bg-accent"
+                } ${
+                  isAnswered &&
+                  option !== currentQuestion.correctAnswer &&
+                  option !== selectedAnswer
+                    ? "opacity-50"
+                    : ""
+                }`}
+                onClick={() => handleAnswerSelect(option)}
+                disabled={isAnswered}
+              >
+                {option}
+                {isAnswered && option === currentQuestion.correctAnswer && (
+                  <Check className="ml-2 h-5 w-5" />
+                )}
+                {isAnswered &&
+                  selectedAnswer === option &&
+                  option !== currentQuestion.correctAnswer && (
+                    <X className="ml-2 h-5 w-5" />
+                  )}
+              </Button>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {isAnswered && (
+        <Card
+          className={`border-2 ${
+            isCorrect ? "border-green-500 bg-green-50" : "border-red-500 bg-red-50"
+          }`}
+        >
+          <CardContent className="p-4 text-center">
+            <div
+              className={`flex items-center justify-center gap-2 text-lg font-semibold ${
+                isCorrect ? "text-green-700" : "text-red-700"
+              }`}
+            >
+              {isCorrect ? <Check className="h-6 w-6" /> : <X className="h-6 w-6" />}
+              {isCorrect ? t.quiz.correct : t.quiz.incorrect}
+            </div>
+
+            <Button
+              onClick={handleNext}
+              className="mt-4"
+              variant={isCorrect ? "default" : "destructive"}
+            >
+              {currentQuestionIndex < totalQuestions - 1
+                ? t.quiz.nextQuestion
+                : t.quiz.finishQuiz}
+            </Button>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 };
