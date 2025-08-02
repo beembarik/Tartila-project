@@ -5,11 +5,10 @@ import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ArabicLetter } from "@/data/arabicAlphabet";
 import { Check, X, Volume2 } from "lucide-react";
-import { DuolingoQuizComplete } from "./DuolingoQuizComplete";
 
 interface DuolingoQuizProps {
   letters: ArabicLetter[];
-  onComplete: (score: number) => void;
+  onComplete: (score: number, total: number) => void;
 }
 
 export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
@@ -38,9 +37,9 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
   // Use a useEffect hook to call onComplete only once when the quiz is finished
   useEffect(() => {
     if (isComplete) {
-      onComplete(score);
+      onComplete(score, totalQuestions);
     }
-  }, [isComplete, score, onComplete]);
+  }, [isComplete, score, onComplete, totalQuestions]);
 
   const generateQuestions = () => {
     const shuffledLetters = [...letters].sort(() => Math.random() - 0.5);
@@ -102,13 +101,8 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
 
   // Then, render the completion screen if the quiz is complete
   if (isComplete) {
-    return (
-      <DuolingoQuizComplete
-        score={score}
-        total={totalQuestions}
-        onRestart={handleRestart}
-      />
-    );
+    // Show a finishing state until parent unmounts this component
+    return <div className="text-center py-20 text-xl text-primary">Finishing quiz...</div>;
   }
 
   // Finally, render the quiz questions

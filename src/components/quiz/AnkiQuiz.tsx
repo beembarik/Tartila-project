@@ -7,7 +7,7 @@ import { Volume2, RotateCcw } from "lucide-react";
 
 interface AnkiQuizProps {
   letters: ArabicLetter[];
-  onComplete: (score: number) => void;
+  onComplete: (score: number, total: number) => void;
 }
 
 export const AnkiQuiz = ({ letters, onComplete }: AnkiQuizProps) => {
@@ -61,7 +61,7 @@ export const AnkiQuiz = ({ letters, onComplete }: AnkiQuizProps) => {
     } else {
       // Calculate final score
       const averageScore = newScores.reduce((a, b) => a + b, 0) / newScores.length;
-      onComplete(Math.round((averageScore / 4) * 100));
+      onComplete(Math.round((averageScore / 4) * 100), totalCards);
     }
   };
 

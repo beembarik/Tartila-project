@@ -15,8 +15,8 @@ const Quiz = () => {
   const { t, arabicAlphabet } = useLanguage();
   const navigate = useNavigate();
 
-  const handleQuizComplete = (score: number) => {
-    setQuizResults({ score, total: 10 });
+  const handleQuizComplete = (score: number, total: number) => {
+    setQuizResults({ score, total });
     setActiveQuiz(null);
   };
 
