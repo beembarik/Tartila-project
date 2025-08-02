@@ -56,12 +56,6 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
     setQuestions(newQuestions);
   };
 
-  useEffect(() => {
-    if (isComplete) {
-      onComplete(score); // Notify parent
-    }
-  }, [isComplete, score, onComplete]);
-
   const handleAnswerSelect = (answer: string) => {
     if (isAnswered) return;
 
@@ -80,6 +74,7 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
       setIsAnswered(false);
     } else {
       setIsComplete(true);
+      onComplete(score); // Notify parent after the quiz is marked as complete
     }
   };
 
