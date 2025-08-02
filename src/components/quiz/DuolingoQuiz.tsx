@@ -95,8 +95,19 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
     generateQuestions();
   };
 
-  if (!questions.length || !currentQuestion) {
+  // ✅ Perbaikan di sini:
+  if (!questions.length) {
     return <div>Loading...</div>;
+  }
+
+  if (isComplete) {
+    return (
+      <DuolingoQuizComplete
+        score={score}
+        total={totalQuestions}
+        onRestart={handleRestart}
+      />
+    );
   }
 
   const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
@@ -204,15 +215,6 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
             </Button>
           </CardContent>
         </Card>
-      )}
-
-      {/* Completion Page */}
-      {isComplete && (
-        <DuolingoQuizComplete
-          score={score}
-          total={totalQuestions}
-          onRestart={handleRestart}
-        />
       )}
     </div>
   );
