@@ -62,16 +62,13 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
     }
   }, [isComplete, score, onComplete]);
 
-  const currentQuestion = questions[currentQuestionIndex];
-  const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-
   const handleAnswerSelect = (answer: string) => {
     if (isAnswered) return;
 
     setSelectedAnswer(answer);
     setIsAnswered(true);
 
-    if (answer === currentQuestion.correctAnswer) {
+    if (questions[currentQuestionIndex]?.correctAnswer === answer) {
       setScore((prev) => prev + 1);
     }
   };
@@ -95,11 +92,12 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
     generateQuestions();
   };
 
-  // ✅ Perbaikan di sini:
+  // ✅ Tangani loading awal
   if (!questions.length) {
     return <div>Loading...</div>;
   }
 
+  // ✅ Render hasil quiz sebelum mengakses currentQuestion
   if (isComplete) {
     return (
       <DuolingoQuizComplete
@@ -110,7 +108,9 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
     );
   }
 
+  const currentQuestion = questions[currentQuestionIndex];
   const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+  const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
