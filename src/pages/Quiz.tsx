@@ -6,11 +6,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { DuolingoQuiz } from "@/components/quiz/DuolingoQuiz";
 import { AnkiQuiz } from "@/components/quiz/AnkiQuiz";
+import { QuizSettings, QuizSettings as QuizSettingsType } from "@/components/quiz/QuizSettings";
+import { DuolingoQuizComplete } from "@/components/quiz/DuolingoQuizComplete";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Brain, Trophy, RotateCcw, Zap, GraduationCap } from "lucide-react";
 
 const Quiz = () => {
   const [activeQuiz, setActiveQuiz] = useState<string | null>(null);
+  const [showSettings, setShowSettings] = useState(false);
+  const [quizSettings, setQuizSettings] = useState<QuizSettingsType>({
+    numberOfQuestions: 10,
+    hasTimer: false,
+    timerMinutes: 5
+  });
   const [quizResults, setQuizResults] = useState<{ score: number; total: number } | null>(null);
   const { t, arabicAlphabet } = useLanguage();
   const navigate = useNavigate();
@@ -23,7 +31,23 @@ const Quiz = () => {
   const handleRestartQuiz = () => {
     setQuizResults(null);
     setActiveQuiz(null);
+    setShowSettings(false);
   };
+
+  const handleQuizStart = (settings: QuizSettingsType) => {
+    setQuizSettings(settings);
+    setShowSettings(false);
+    setActiveQuiz('duolingo');
+  };
+
+  if (showSettings) {
+    return (
+      <QuizSettings
+        onStart={handleQuizStart}
+        onBack={() => setShowSettings(false)}
+      />
+    );
+  }
 
   if (activeQuiz) {
     return (
@@ -43,7 +67,11 @@ const Quiz = () => {
           </div>
           
           {activeQuiz === 'duolingo' ? (
-            <DuolingoQuiz letters={arabicAlphabet} onComplete={handleQuizComplete} />
+            <DuolingoQuiz 
+              letters={arabicAlphabet} 
+              settings={quizSettings}
+              onComplete={handleQuizComplete} 
+            />
           ) : (
             <AnkiQuiz letters={arabicAlphabet} onComplete={handleQuizComplete} />
           )}
@@ -53,63 +81,12 @@ const Quiz = () => {
   }
 
   if (quizResults) {
-    const percentage = Math.round((quizResults.score / quizResults.total) * 100);
-    const getScoreColor = (percentage: number) => {
-      if (percentage >= 80) return "text-green-600";
-      if (percentage >= 60) return "text-yellow-600";
-      return "text-red-600";
-    };
-
     return (
-      <div className="min-h-screen bg-gradient-warm py-8">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <Card className="border-2 border-primary/20">
-            <CardHeader className="text-center">
-              <div className="mx-auto mb-4 w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center">
-                <Trophy className="h-10 w-10 text-white" />
-              </div>
-              <CardTitle className="text-3xl text-primary">{t.quiz.results}</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center space-y-6">
-              <div className="space-y-4">
-                <div className={`text-6xl font-bold ${getScoreColor(percentage)}`}>
-                  {percentage}%
-                </div>
-                <div className="text-lg text-muted-foreground">
-                  {t.quiz.yourScore}: {quizResults.score} / {quizResults.total}
-                </div>
-                
-                <Badge className={`px-4 py-2 text-base ${
-                  percentage >= 80 ? "bg-green-100 text-green-800" :
-                  percentage >= 60 ? "bg-yellow-100 text-yellow-800" :
-                  "bg-red-100 text-red-800"
-                }`}>
-                  {percentage >= 80 ? "Excellent!" : 
-                   percentage >= 60 ? "Good Job!" : 
-                   "Keep Practicing!"}
-                </Badge>
-              </div>
-
-              <div className="flex gap-4 justify-center">
-                <Button
-                  onClick={handleRestartQuiz}
-                  variant="outline"
-                  className="flex items-center gap-2"
-                >
-                  <RotateCcw size={16} />
-                  {t.quiz.restart}
-                </Button>
-                <Button
-                  onClick={() => navigate("/learn")}
-                  className="bg-gradient-primary text-white"
-                >
-                  Continue Learning
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      <DuolingoQuizComplete
+        score={quizResults.score}
+        total={quizResults.total}
+        onRestart={handleRestartQuiz}
+      />
     );
   }
 
@@ -159,7 +136,7 @@ const Quiz = () => {
                 </div>
 
                 <Button
-                  onClick={() => setActiveQuiz('duolingo')}
+                  onClick={() => setShowSettings(true)}
                   className="w-full bg-green-600 hover:bg-green-700 text-white"
                   size="lg"
                 >

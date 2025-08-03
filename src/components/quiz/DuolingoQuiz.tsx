@@ -4,19 +4,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ArabicLetter } from "@/data/arabicAlphabet";
-import { Check, X, Volume2 } from "lucide-react";
+import { Check, X, Volume2, Clock } from "lucide-react";
+import { QuizSettings } from "./QuizSettings";
 
 interface DuolingoQuizProps {
   letters: ArabicLetter[];
+  settings: QuizSettings;
   onComplete: (score: number, total: number) => void;
 }
 
-export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
+export const DuolingoQuiz = ({ letters, settings, onComplete }: DuolingoQuizProps) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(settings.hasTimer ? settings.timerMinutes * 60 : 0);
   const [questions, setQuestions] = useState<
     Array<{
       letter: ArabicLetter;
@@ -26,13 +29,29 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
   >([]);
 
   const { t } = useLanguage();
-  const totalQuestions = 10;
+  const totalQuestions = settings.numberOfQuestions;
 
   useEffect(() => {
     if (letters.length > 0) {
       generateQuestions();
     }
   }, [letters]);
+
+  // Timer effect
+  useEffect(() => {
+    if (settings.hasTimer && timeLeft > 0 && !isComplete) {
+      const timer = setInterval(() => {
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            setIsComplete(true);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [settings.hasTimer, timeLeft, isComplete]);
 
   // Use a useEffect hook to call onComplete only once when the quiz is finished
   useEffect(() => {
@@ -91,7 +110,14 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
     setIsAnswered(false);
     setScore(0);
     setIsComplete(false);
+    setTimeLeft(settings.hasTimer ? settings.timerMinutes * 60 : 0);
     generateQuestions();
+  };
+
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs.toString().padStart(2, '0')}`;
   };
 
   // Render the loading state first
@@ -112,7 +138,6 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
-      {/* ... (rest of the component's JSX remains the same) ... */}
       <div className="space-y-2">
         <div className="flex justify-between text-sm text-muted-foreground">
           <span>
@@ -121,8 +146,23 @@ export const DuolingoQuiz = ({ letters, onComplete }: DuolingoQuizProps) => {
           <span>
             {t.quiz.score}: {score}
           </span>
+          {settings.hasTimer && (
+            <span className={`flex items-center gap-1 ${timeLeft < 60 ? 'text-red-500' : 'text-muted-foreground'}`}>
+              <Clock size={14} />
+              {formatTime(timeLeft)}
+            </span>
+          )}
         </div>
         <Progress value={progress} className="h-3" />
+        {settings.hasTimer && (
+          <Progress 
+            value={(timeLeft / (settings.timerMinutes * 60)) * 100} 
+            className="h-2" 
+            style={{ 
+              background: timeLeft < 60 ? 'rgb(239 68 68 / 0.2)' : undefined 
+            }} 
+          />
+        )}
       </div>
 
       <Card className="border-2 border-primary/20">

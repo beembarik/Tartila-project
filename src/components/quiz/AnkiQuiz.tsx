@@ -59,9 +59,10 @@ export const AnkiQuiz = ({ letters, onComplete }: AnkiQuizProps) => {
       setCurrentCardIndex(prev => prev + 1);
       setShowAnswer(false);
     } else {
-      // Calculate final score
-      const averageScore = newScores.reduce((a, b) => a + b, 0) / newScores.length;
-      onComplete(Math.round((averageScore / 4) * 100), totalCards);
+      // Calculate final score based on correct answers
+      // Count answers rated as 'good' or 'easy' as correct
+      const correctAnswers = newScores.filter(score => score >= 3).length;
+      onComplete(correctAnswers, totalCards);
     }
   };
 
