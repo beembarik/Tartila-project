@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { AlphabetCard } from "@/components/AlphabetCard";
 import { AlphabetGrid } from "@/components/AlphabetGrid";
 import { NavigationControls } from "@/components/NavigationControls";
-import { AudioPlayer } from "@/components/AudioPlayer";
+import { EnhancedAudioPlayer } from "@/components/EnhancedAudioPlayer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -61,13 +61,13 @@ const Learn = () => {
   }, [arabicAlphabet]);
 
   return (
-    <div className="min-h-screen bg-gradient-warm py-8">
+    <div className="min-h-screen bg-gradient-rainbow py-8 relative overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <div className="text-center mb-8 fade-in">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-float">
             {t.navigation.learn}
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground slide-up">
             Study Arabic letters with interactive flashcards and detailed information
           </p>
         </div>
@@ -86,20 +86,16 @@ const Learn = () => {
 
           <TabsContent value="flashcards" className="space-y-8">
             {/* Audio Player */}
-            <div className="flex justify-center">
-              <Card className="bg-card/50 backdrop-blur-sm">
-                <CardContent className="p-4">
-                  <AudioPlayer 
-                    letterName={currentLetter.name}
-                    arabicLetter={currentLetter.arabic}
-                    letterId={currentLetter.id}
-                  />
-                </CardContent>
-              </Card>
+            <div className="flex justify-center slide-up">
+              <EnhancedAudioPlayer
+                letterName={currentLetter.name}
+                arabicLetter={currentLetter.arabic}
+                letterId={currentLetter.id}
+              />
             </div>
 
             {/* Flashcard */}
-            <div className="flex justify-center">
+            <div className="flex justify-center fade-in">
               <AlphabetCard
                 letter={currentLetter}
                 isFlipped={isCardFlipped}

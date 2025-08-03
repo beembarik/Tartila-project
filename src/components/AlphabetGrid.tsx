@@ -16,18 +16,18 @@ export const AlphabetGrid = ({ letters, selectedLetter, onLetterSelect }: Alphab
           <Card
             key={letter.id}
             className={`
-              cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-warm
+              cursor-pointer transition-all duration-500 hover-lift hover:shadow-soft
               ${selectedLetter?.id === letter.id 
-                ? 'ring-2 ring-primary-gold bg-gradient-primary text-white' 
-                : 'bg-card hover:bg-accent'
+                ? 'ring-2 ring-primary-rose bg-gradient-primary text-white scale-105' 
+                : 'bg-card hover:bg-gradient-warm hover:shadow-rose'
               }
             `}
             onClick={() => onLetterSelect(letter)}
           >
             <CardContent className="p-4 flex flex-col items-center space-y-2">
               <div className={`
-                text-3xl md:text-4xl font-bold transition-colors
-                ${selectedLetter?.id === letter.id ? 'text-white' : 'text-primary'}
+                text-3xl md:text-4xl font-bold transition-all duration-300 hover:animate-bounce-gentle
+                ${selectedLetter?.id === letter.id ? 'text-white animate-glow' : 'text-primary'}
               `}>
                 {letter.arabic}
               </div>
