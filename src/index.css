@@ -2,127 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern pastel design system for young Muslim audience */
+/* Modern pastel design system + color palette from reference image */
 
 @layer base {
   :root {
-    /* Soft pastel background with gentle warmth */
-    --background: 320 15% 97%;
-    --foreground: 235 15% 25%;
+    /* From image (Flowny) palette */
+    --pastel-purple: 250 100% 85%;
+    --pastel-orange: 27 89% 64%;
+    --neon-yellow: 66 100% 68%;
+    --soft-black: 0 0% 12%;
+    --soft-white: 0 0% 100%;
+    --soft-light: 0 0% 97%;
+    --sunny-yellow: 39 100% 74%;
 
-    /* Soft card colors with subtle rose undertones */
-    --card: 330 20% 98%;
-    --card-foreground: 235 15% 25%;
+    /* Base */
+    --background: var(--soft-light);
+    --foreground: var(--soft-black);
 
-    /* Gentle popover colors */
-    --popover: 330 20% 98%;
-    --popover-foreground: 235 15% 25%;
+    /* Cards and popovers */
+    --card: var(--soft-white);
+    --card-foreground: var(--soft-black);
+    --popover: var(--soft-white);
+    --popover-foreground: var(--soft-black);
 
-    /* Pastel primary colors - soft teal and rose */
-    --primary: 170 45% 65%;
-    --primary-foreground: 0 0% 100%;
-    --primary-rose: 340 60% 75%;
-    --primary-rose-foreground: 0 0% 100%;
-    --primary-mint: 150 40% 70%;
-    --primary-mint-foreground: 0 0% 100%;
+    /* Primary and variants */
+    --primary: var(--pastel-purple);
+    --primary-foreground: var(--soft-white);
+    --primary-rose: var(--pastel-orange);
+    --primary-rose-foreground: var(--soft-white);
+    --primary-mint: var(--neon-yellow);
+    --primary-mint-foreground: var(--soft-black);
 
-    /* Soft secondary pastels */
-    --secondary: 320 30% 92%;
-    --secondary-foreground: 235 15% 25%;
-
-    /* Gentle muted tones */
-    --muted: 320 20% 94%;
-    --muted-foreground: 235 10% 50%;
-
-    /* Soft accent colors */
-    --accent: 280 35% 88%;
-    --accent-foreground: 235 15% 25%;
-
-    /* Gentle destructive with soft coral */
+    /* Others */
+    --secondary: var(--sunny-yellow);
+    --secondary-foreground: var(--soft-black);
+    --muted: var(--soft-light);
+    --muted-foreground: var(--soft-black);
+    --accent: var(--pastel-orange);
+    --accent-foreground: var(--soft-white);
     --destructive: 350 60% 70%;
     --destructive-foreground: 0 0% 100%;
-
-    /* Soft borders and inputs */
-    --border: 320 25% 88%;
-    --input: 320 25% 88%;
-    --ring: 170 45% 65%;
-
-    /* Modern pastel gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(170 45% 65%), hsl(340 60% 75%));
-    --gradient-warm: linear-gradient(180deg, hsl(320 15% 97%), hsl(320 20% 94%));
-    --gradient-accent: linear-gradient(135deg, hsl(280 35% 88%), hsl(150 40% 85%));
-    --gradient-rainbow: linear-gradient(90deg, hsl(340 60% 85%), hsl(280 50% 85%), hsl(220 50% 85%), hsl(170 45% 80%));
-    
-    /* Soft pattern colors */
-    --pattern-light: 340 60% 95%;
-    --pattern-medium: 170 30% 85%;
-    
-    /* Gentle shadows */
-    --shadow-warm: 0 8px 25px -8px hsl(170 45% 65% / 0.15);
-    --shadow-rose: 0 6px 20px hsl(340 60% 75% / 0.2);
-    --shadow-soft: 0 4px 15px hsl(320 25% 80% / 0.1);
-    
-    /* Smooth animation transitions */
+    --border: var(--soft-light);
+    --input: var(--soft-light);
+    --ring: var(--pastel-purple);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--pastel-purple)), hsl(var(--pastel-orange)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--soft-light)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--neon-yellow)));
+    --gradient-rainbow: linear-gradient(90deg, hsl(var(--pastel-orange)), hsl(var(--pastel-purple)), hsl(220 50% 85%), hsl(var(--neon-yellow)));
+    --pattern-light: var(--pastel-purple);
+    --pattern-medium: var(--neon-yellow);
+    --shadow-warm: 0 8px 25px -8px hsl(var(--pastel-orange) / 0.15);
+    --shadow-rose: 0 6px 20px hsl(var(--pastel-purple) / 0.2);
+    --shadow-soft: 0 4px 15px hsl(var(--soft-light) / 0.1);
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (optional) */
+    --sidebar-background: var(--soft-white);
+    --sidebar-foreground: var(--soft-black);
+    --sidebar-primary: var(--pastel-purple);
+    --sidebar-primary-foreground: var(--soft-white);
+    --sidebar-accent: var(--neon-yellow);
+    --sidebar-accent-foreground: var(--soft-black);
+    --sidebar-border: var(--soft-light);
+    --sidebar-ring: var(--pastel-purple);
   }
 
   .dark {
-    /* Dark mode with soft, warm pastels */
     --background: 235 25% 8%;
     --foreground: 320 15% 92%;
-
     --card: 235 20% 12%;
     --card-foreground: 320 15% 92%;
-
     --popover: 235 20% 12%;
     --popover-foreground: 320 15% 92%;
-
-    --primary: 170 35% 55%;
+    --primary: 250 100% 75%;
     --primary-foreground: 235 25% 8%;
-
     --secondary: 235 15% 18%;
     --secondary-foreground: 320 15% 92%;
-
     --muted: 235 15% 15%;
     --muted-foreground: 320 10% 65%;
-
     --accent: 280 25% 25%;
     --accent-foreground: 320 15% 92%;
-
     --destructive: 350 50% 60%;
     --destructive-foreground: 235 25% 8%;
-
     --border: 235 15% 18%;
     --input: 235 15% 18%;
-    --ring: 170 35% 55%;
+    --ring: 250 100% 75%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 250 100% 75%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent: 66 100% 50%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 250 100% 75%;
   }
 }
 
@@ -136,24 +111,23 @@
   }
 }
 
-/* 3D flip card utilities */
 @layer utilities {
   .perspective-1000 {
     perspective: 1000px;
   }
-  
+
   .transform-style-preserve-3d {
     transform-style: preserve-3d;
   }
-  
+
   .backface-hidden {
     backface-visibility: hidden;
   }
-  
+
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
-  
+
   .pattern-border {
     background-image: repeating-linear-gradient(
       45deg,
@@ -164,7 +138,6 @@
     );
   }
 
-  /* Smooth hover animations */
   .hover-lift {
     @apply transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1;
   }
@@ -177,12 +150,10 @@
     animation: float 6s ease-in-out infinite;
   }
 
-  /* Glassmorphism effect */
   .glass {
     @apply backdrop-blur-sm bg-white/10 border border-white/20;
   }
 
-  /* Smooth fade transitions */
   .fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
