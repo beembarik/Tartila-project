@@ -85,15 +85,6 @@ const Learn = () => {
           </TabsList>
 
           <TabsContent value="flashcards" className="space-y-8">
-            {/* Audio Player */}
-            <div className="flex justify-center slide-up">
-              <EnhancedAudioPlayer
-                letterName={currentLetter.name}
-                arabicLetter={currentLetter.arabic}
-                letterId={currentLetter.id}
-              />
-            </div>
-
             {/* Flashcard */}
             <div className="flex justify-center fade-in">
               <AlphabetCard
@@ -102,6 +93,17 @@ const Learn = () => {
                 onFlip={handleFlip}
                 onPlaySound={handlePlaySound}
               />
+            </div>
+
+            {/* Audio Player */}
+            <div className="flex justify-center slide-up">
+              <div className="w-80">
+                <EnhancedAudioPlayer
+                  letterName={currentLetter.name}
+                  arabicLetter={currentLetter.arabic}
+                  letterId={currentLetter.id}
+                />
+              </div>
             </div>
 
             {/* Navigation Controls */}
