@@ -25,7 +25,7 @@ const Index = () => {
             <img 
               src={alphabetIllustration} 
               alt="Arabic Alphabet" 
-              className="w-24 h-24 rounded-full border-4 border-primary-gold animate-float"
+              className="w-24 h-24 rounded-full border-4 border-accent animate-float"
             />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-slide-in">
@@ -67,7 +67,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="outline"
-              className="bg-primary-gold border-primary-gold text-white hover:bg-white hover:text-primary font-semibold"
+              className="bg-accent border-accent text-white hover:bg-white hover:text-primary font-semibold"
             >
               <Link to="/quiz" className="flex items-center gap-2">
                 <Brain size={20} />
@@ -182,7 +182,7 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-primary text-white border-primary-gold">
+          <Card className="bg-gradient-primary text-white border-accent">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Star className="h-5 w-5" />

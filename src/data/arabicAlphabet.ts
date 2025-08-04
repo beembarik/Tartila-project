@@ -40,7 +40,7 @@ export const getArabicAlphabet = (language: Language): ArabicLetter[] => {
 export const getMakhrajColor = (makhraj: string): string => {
   const colors: { [key: string]: string } = {
     "Al-Jawf": "bg-gradient-primary",
-    "Ash-Shafatayn": "bg-primary-gold",
+    "Ash-Shafatayn": "bg-accent",
     "Tooth Ridge": "bg-gradient-accent", 
     "Between teeth": "bg-accent",
     "Middle of tongue": "bg-primary",

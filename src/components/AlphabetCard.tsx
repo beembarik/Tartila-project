@@ -41,7 +41,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
               <div className="text-8xl md:text-9xl font-bold text-primary animate-float font-arabic">
                 {letter.arabic}
               </div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-gold rounded-full animate-glow"></div>
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-glow"></div>
             </div>
             
             {/* Letter Name */}
@@ -64,7 +64,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                   e.stopPropagation();
                   onPlaySound();
                 }}
-                className="flex items-center gap-2 hover:bg-primary-gold hover:text-white"
+                className="flex items-center gap-2 hover:bg-accent hover:text-white"
               >
                 <Volume2 size={16} />
                 {t.actions.listen}
@@ -127,7 +127,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                 <div className="space-y-1">
                   {letter.pronunciation.tips.map((tip, index) => (
                     <div key={index} className="text-xs text-foreground/70 flex items-start gap-1">
-                      <span className="text-primary-gold">•</span>
+                      <span className="text-accent">•</span>
                       <span>{tip}</span>
                     </div>
                   ))}

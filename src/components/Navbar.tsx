@@ -20,7 +20,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-primary/95 backdrop-blur-sm border-b border-primary-gold/20 sticky top-0 z-50">
+    <nav className="bg-primary/95 backdrop-blur-sm border-b border-accent/20 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -28,7 +28,7 @@ export const Navbar = () => {
             <img 
               src={alphabetIllustration} 
               alt="Arabic Alphabet" 
-              className="w-10 h-10 rounded-full border-2 border-primary-gold"
+              className="w-10 h-10 rounded-full border-2 border-accent"
             />
             <div className="text-white">
               <div className="font-bold text-lg">Arabic Learning</div>
@@ -44,7 +44,7 @@ export const Navbar = () => {
                 to={item.path}
                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition-all duration-300 ${
                   isActive(item.path)
-                    ? "bg-primary-gold text-primary-gold-foreground font-medium"
+                    ? "bg-accent text-accent-foreground font-medium"
                     : "text-white hover:bg-white/10"
                 }`}
               >
@@ -80,7 +80,7 @@ export const Navbar = () => {
                   to={item.path}
                   className={`flex items-center gap-3 px-3 py-3 rounded-md transition-all duration-300 ${
                     isActive(item.path)
-                      ? "bg-primary-gold text-primary-gold-foreground font-medium"
+                      ? "bg-accent text-accent-foreground font-medium"
                       : "text-white hover:bg-white/10"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
