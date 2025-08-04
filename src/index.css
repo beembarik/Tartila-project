@@ -99,7 +99,6 @@
     --sidebar-border: var(--dark-gray);
     --sidebar-ring: var(--toska-pastel);
   }
-}
 
 @layer base {
   * {
