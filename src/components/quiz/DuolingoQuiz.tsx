@@ -6,6 +6,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { ArabicLetter } from "@/data/arabicAlphabet";
 import { Check, X, Volume2, Clock } from "lucide-react";
 import { QuizSettings } from "./QuizSettings";
+import { useGamification } from "@/contexts/GamificationContext";
 
 interface DuolingoQuizProps {
   letters: ArabicLetter[];
@@ -29,6 +30,7 @@ export const DuolingoQuiz = ({ letters, settings, onComplete }: DuolingoQuizProp
   >([]);
 
   const { t } = useLanguage();
+  const { markQuestionAnswered, earnAchievement } = useGamification();
   const totalQuestions = settings.numberOfQuestions;
 
   useEffect(() => {
@@ -56,9 +58,15 @@ export const DuolingoQuiz = ({ letters, settings, onComplete }: DuolingoQuizProp
   // Use a useEffect hook to call onComplete only once when the quiz is finished
   useEffect(() => {
     if (isComplete) {
+      // Check for achievements
+      const accuracy = (score / totalQuestions) * 100;
+      if (accuracy === 100) {
+        earnAchievement('perfect_quiz');
+      }
+      
       onComplete(score, totalQuestions);
     }
-  }, [isComplete, score, onComplete, totalQuestions]);
+  }, [isComplete, score, onComplete, totalQuestions, earnAchievement]);
 
   const generateQuestions = () => {
     const shuffledLetters = [...letters].sort(() => Math.random() - 0.5);
@@ -87,9 +95,14 @@ export const DuolingoQuiz = ({ letters, settings, onComplete }: DuolingoQuizProp
     setSelectedAnswer(answer);
     setIsAnswered(true);
 
-    if (questions[currentQuestionIndex]?.correctAnswer === answer) {
+    const isCorrect = questions[currentQuestionIndex]?.correctAnswer === answer;
+    
+    if (isCorrect) {
       setScore((prev) => prev + 1);
     }
+
+    // Track gamification
+    markQuestionAnswered(isCorrect);
   };
 
   const handleNext = () => {

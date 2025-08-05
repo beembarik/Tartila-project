@@ -1,15 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Volume2, Star, Brain, ArrowRight } from "lucide-react";
+import { BookOpen, Volume2, Star, Brain, ArrowRight, Trophy, Target } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Link } from "react-router-dom";
+import { ProgressBar } from "@/components/gamification/ProgressBar";
+import { StatsDisplay } from "@/components/gamification/StatsDisplay";
+import { useGamification } from "@/contexts/GamificationContext";
+import React from "react";
 const heroBackground = "/assets/hero-background.jpg";
 const alphabetIllustration = "/assets/alphabet-illustration.jpg";
 const patternDecoration = "/assets/pattern-decoration.jpg";
 
 const Index = () => {
   const { t } = useLanguage();
+  const { data, updateStreak } = useGamification();
+
+  // Update streak when user visits the app
+  React.useEffect(() => {
+    updateStreak();
+  }, []);
 
 
   return (
@@ -58,7 +68,8 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              className="bg-white text-primary hover:bg-white/95 hover:scale-105 font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide border border-white/50 rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              variant="gradient"
+              className="shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/learn" className="flex items-center justify-center gap-3">
                 <BookOpen size={20} />
@@ -70,8 +81,8 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary hover:scale-105 font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              variant="gold"
+              className="font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/quiz" className="flex items-center justify-center gap-3">
                 <Brain size={20} />
@@ -80,6 +91,32 @@ const Index = () => {
               </Link>
             </Button>
           </div>
+
+          {/* Progress Indicator */}
+          {data.totalQuestions > 0 && (
+            <div className="mt-8 max-w-sm mx-auto">
+              <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
+                <div className="flex items-center justify-between text-white text-sm">
+                  <div className="flex items-center gap-2">
+                    <Trophy className="w-4 h-4" />
+                    <span>Level {data.level}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Target className="w-4 h-4" />
+                    <span>{Math.round((data.correctAnswers / data.totalQuestions) * 100)}% accuracy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Gamification Dashboard */}
+      <div className="container mx-auto px-6 py-8 -mt-20 relative z-20">
+        <div className="grid gap-6 max-w-4xl mx-auto">
+          <ProgressBar />
+          <StatsDisplay />
         </div>
       </div>
 

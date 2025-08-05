@@ -9,7 +9,10 @@ import { AnkiQuiz } from "@/components/quiz/AnkiQuiz";
 import { QuizSettings, QuizSettings as QuizSettingsType } from "@/components/quiz/QuizSettings";
 import { DuolingoQuizComplete } from "@/components/quiz/DuolingoQuizComplete";
 import { useLanguage } from "@/hooks/useLanguage";
-import { Brain, Trophy, RotateCcw, Zap, GraduationCap } from "lucide-react";
+import { Brain, Trophy, RotateCcw, Zap, GraduationCap, Award } from "lucide-react";
+import { AchievementsGrid } from "@/components/gamification/AchievementsGrid";
+import { ProgressBar } from "@/components/gamification/ProgressBar";
+import { StatsDisplay } from "@/components/gamification/StatsDisplay";
 
 const Quiz = () => {
   const [activeQuiz, setActiveQuiz] = useState<string | null>(null);
@@ -93,6 +96,11 @@ const Quiz = () => {
   return (
     <div className="min-h-screen bg-gradient-warm py-8">
       <div className="container mx-auto px-4">
+        {/* Gamification Dashboard */}
+        <div className="mb-8">
+          <ProgressBar />
+        </div>
+
         {/* Hero Section */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-primary rounded-full mb-6">
@@ -180,6 +188,11 @@ const Quiz = () => {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Achievements Section */}
+          <div className="mt-16">
+            <AchievementsGrid />
           </div>
 
           {/* Features Section */}

@@ -17,6 +17,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
         arabic: ["Amiri", "serif"],
       },
       colors: {
@@ -28,10 +29,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          rose: "hsl(var(--primary-rose))",
-          "rose-foreground": "hsl(var(--primary-rose-foreground))",
-          mint: "hsl(var(--primary-mint))",
-          "mint-foreground": "hsl(var(--primary-mint-foreground))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -48,6 +47,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          light: "hsl(var(--accent-light))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -80,7 +80,7 @@ export default {
       },
       boxShadow: {
         warm: "var(--shadow-warm)",
-        rose: "var(--shadow-rose)",
+        islamic: "var(--shadow-islamic)",
         soft: "var(--shadow-soft)",
         gold: "var(--shadow-gold)",
       },

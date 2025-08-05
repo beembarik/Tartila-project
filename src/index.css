@@ -2,62 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern pastel design system + color palette from reference image (Vite-safe HSL format) */
+/* Islamic-inspired modern design system with geometric patterns */
 
 @layer base {
   :root {
-    /* Base color values (HSL with commas for compatibility) */
-    --toska-pastel: 167, 22%, 55%;        /* #72A89C */
-    --pastel-blue: 213, 69%, 68%;         /* #75A7E3 */
-    --salmon-pastel: 11, 81%, 76%;        /* #F4998D */
-    --deep-black: 0, 0%, 0%;              /* #000000 */
-    --dark-gray: 0, 0%, 10%;              /* #1A1A1A */
-    --light-ash: 0, 0%, 96%;              /* #F5F5F5 */
+    /* Islamic-inspired color palette (HSL format) */
+    --islamic-green: 140, 68%, 28%;       /* #1E7145 */
+    --islamic-green-light: 140, 68%, 45%; /* #2E9A5F */
+    --islamic-green-dark: 140, 68%, 20%;  /* #1A5A38 */
+    --soft-gold: 45, 80%, 70%;            /* #E5C878 */
+    --soft-gold-light: 45, 85%, 85%;      /* #F0DC9E */
+    --warm-cream: 40, 25%, 95%;           /* #F7F5F2 */
+    --light-sage: 140, 15%, 85%;          /* #D4DDD7 */
     --pure-white: 0, 0%, 100%;            /* #FFFFFF */
+    --charcoal: 0, 0%, 15%;               /* #262626 */
+    --soft-gray: 0, 0%, 45%;              /* #737373 */
 
     /* Base */
-    --background: hsl(--pure-white);
-    --foreground: hsl(--dark-gray);
+    --background: hsl(var(--warm-cream));
+    --foreground: hsl(var(--charcoal));
 
     /* Cards and popovers */
-    --card: hsl(--pure-white);
-    --card-foreground: hsl(--dark-gray);
-    --popover: hsl(--pure-white);
-    --popover-foreground: hsl(--dark-gray);
+    --card: hsl(var(--pure-white));
+    --card-foreground: hsl(var(--charcoal));
+    --popover: hsl(var(--pure-white));
+    --popover-foreground: hsl(var(--charcoal));
 
-    /* Primary and variants */
-    --primary: hsl(--toska-pastel);
-    --primary-foreground: hsl(--pure-white);
-    --primary-rose: hsl(--salmon-pastel);
-    --primary-rose-foreground: hsl(--pure-white);
-    --primary-mint: hsl(--pastel-blue);
-    --primary-mint-foreground: hsl(--pure-white);
+    /* Primary (Islamic Green) and variants */
+    --primary: hsl(var(--islamic-green));
+    --primary-foreground: hsl(var(--pure-white));
+    --primary-light: hsl(var(--islamic-green-light));
+    --primary-dark: hsl(var(--islamic-green-dark));
 
-    /* Others */
-    --secondary: hsl(--pastel-blue);
-    --secondary-foreground: hsl(--pure-white);
-    --muted: hsl(--light-ash);
-    --muted-foreground: hsl(--dark-gray);
-    --accent: hsl(--salmon-pastel);
-    --accent-foreground: hsl(--pure-white);
+    /* Secondary (Light Sage) */
+    --secondary: hsl(var(--light-sage));
+    --secondary-foreground: hsl(var(--charcoal));
+    
+    /* Accent (Soft Gold) */
+    --accent: hsl(var(--soft-gold));
+    --accent-foreground: hsl(var(--charcoal));
+    --accent-light: hsl(var(--soft-gold-light));
+
+    /* Muted and utility colors */
+    --muted: hsl(var(--light-sage));
+    --muted-foreground: hsl(var(--soft-gray));
     --destructive: hsl(0, 84%, 60%);
-    --destructive-foreground: hsl(--pure-white);
-    --border: hsl(--light-ash);
-    --input: hsl(--light-ash);
-    --ring: hsl(--toska-pastel);
+    --destructive-foreground: hsl(var(--pure-white));
+    --border: hsl(var(--light-sage));
+    --input: hsl(var(--pure-white));
+    --ring: hsl(var(--islamic-green));
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(--toska-pastel), hsl(--pastel-blue));
-    --gradient-warm: linear-gradient(180deg, hsl(--pure-white), hsl(--light-ash));
-    --gradient-accent: linear-gradient(135deg, hsl(--salmon-pastel), hsl(--pastel-blue));
-    --gradient-rainbow: linear-gradient(90deg, hsl(--salmon-pastel), hsl(--toska-pastel), hsl(--pastel-blue), hsl(--light-ash));
+    /* Islamic-inspired gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--islamic-green)), hsl(var(--islamic-green-light)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(var(--light-sage)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--soft-gold)), hsl(var(--soft-gold-light)));
+    --gradient-islamic: linear-gradient(90deg, hsl(var(--islamic-green)), hsl(var(--soft-gold)), hsl(var(--light-sage)));
 
-    /* Patterns & shadows */
-    --pattern-light: hsl(--toska-pastel);
-    --pattern-medium: hsl(--pastel-blue);
-    --shadow-warm: 0 8px 25px -8px hsl(--salmon-pastel / 0.15);
-    --shadow-rose: 0 6px 20px hsl(--toska-pastel / 0.2);
-    --shadow-soft: 0 4px 15px hsl(--light-ash / 0.1);
+    /* Islamic patterns & shadows */
+    --pattern-light: hsl(var(--light-sage));
+    --pattern-medium: hsl(var(--islamic-green));
+    --shadow-warm: 0 8px 25px -8px hsl(var(--soft-gold) / 0.25);
+    --shadow-islamic: 0 6px 20px hsl(var(--islamic-green) / 0.15);
+    --shadow-soft: 0 4px 15px hsl(var(--light-sage) / 0.2);
+    --shadow-gold: 0 8px 30px -10px hsl(var(--soft-gold) / 0.3);
 
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -68,44 +75,44 @@
     --radius: 0.5rem;
 
     /* Sidebar */
-    --sidebar-background: hsl(--pure-white);
-    --sidebar-foreground: hsl(--dark-gray);
-    --sidebar-primary: hsl(--toska-pastel);
-    --sidebar-primary-foreground: hsl(--pure-white);
-    --sidebar-accent: hsl(--pastel-blue);
-    --sidebar-accent-foreground: hsl(--pure-white);
-    --sidebar-border: hsl(--light-ash);
-    --sidebar-ring: hsl(--toska-pastel);
+    --sidebar-background: hsl(var(--pure-white));
+    --sidebar-foreground: hsl(var(--charcoal));
+    --sidebar-primary: hsl(var(--islamic-green));
+    --sidebar-primary-foreground: hsl(var(--pure-white));
+    --sidebar-accent: hsl(var(--soft-gold));
+    --sidebar-accent-foreground: hsl(var(--charcoal));
+    --sidebar-border: hsl(var(--light-sage));
+    --sidebar-ring: hsl(var(--islamic-green));
   }
 
   .dark {
-    --background: hsl(--deep-black);
-    --foreground: hsl(--light-ash);
-    --card: hsl(--dark-gray);
-    --card-foreground: hsl(--light-ash);
-    --popover: hsl(--dark-gray);
-    --popover-foreground: hsl(--light-ash);
-    --primary: hsl(--toska-pastel);
-    --primary-foreground: hsl(--pure-white);
-    --secondary: hsl(--pastel-blue);
-    --secondary-foreground: hsl(--pure-white);
-    --muted: hsl(--dark-gray);
-    --muted-foreground: hsl(--light-ash);
-    --accent: hsl(--salmon-pastel);
-    --accent-foreground: hsl(--pure-white);
-    --destructive: hsl(0, 84%, 60%);
-    --destructive-foreground: hsl(--pure-white);
-    --border: hsl(--dark-gray);
-    --input: hsl(--dark-gray);
-    --ring: hsl(--toska-pastel);
-    --sidebar-background: hsl(--deep-black);
-    --sidebar-foreground: hsl(--light-ash);
-    --sidebar-primary: hsl(--toska-pastel);
-    --sidebar-primary-foreground: hsl(--pure-white);
-    --sidebar-accent: hsl(--pastel-blue);
-    --sidebar-accent-foreground: hsl(--pure-white);
-    --sidebar-border: hsl(--dark-gray);
-    --sidebar-ring: hsl(--toska-pastel);
+    --background: hsl(var(--charcoal));
+    --foreground: hsl(var(--warm-cream));
+    --card: 0, 0%, 12%;
+    --card-foreground: hsl(var(--warm-cream));
+    --popover: 0, 0%, 12%;
+    --popover-foreground: hsl(var(--warm-cream));
+    --primary: hsl(var(--islamic-green-light));
+    --primary-foreground: hsl(var(--pure-white));
+    --secondary: 140, 15%, 25%;
+    --secondary-foreground: hsl(var(--warm-cream));
+    --muted: 0, 0%, 18%;
+    --muted-foreground: hsl(var(--soft-gray));
+    --accent: hsl(var(--soft-gold));
+    --accent-foreground: hsl(var(--charcoal));
+    --destructive: 0, 84%, 60%;
+    --destructive-foreground: hsl(var(--pure-white));
+    --border: 0, 0%, 18%;
+    --input: 0, 0%, 18%;
+    --ring: hsl(var(--islamic-green-light));
+    --sidebar-background: hsl(var(--charcoal));
+    --sidebar-foreground: hsl(var(--warm-cream));
+    --sidebar-primary: hsl(var(--islamic-green-light));
+    --sidebar-primary-foreground: hsl(var(--pure-white));
+    --sidebar-accent: hsl(var(--soft-gold));
+    --sidebar-accent-foreground: hsl(var(--charcoal));
+    --sidebar-border: 0, 0%, 18%;
+    --sidebar-ring: hsl(var(--islamic-green-light));
   }
 
   * {
@@ -113,7 +120,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--islamic-green) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(var(--soft-gold) / 0.03) 0%, transparent 50%);
   }
 }
 
@@ -133,11 +144,18 @@
   .pattern-border {
     background-image: repeating-linear-gradient(
       45deg,
-      var(--pattern-light),
-      var(--pattern-light) 8px,
-      var(--pattern-medium) 8px,
-      var(--pattern-medium) 16px
+      hsl(var(--pattern-light)),
+      hsl(var(--pattern-light)) 8px,
+      hsl(var(--pattern-medium)) 8px,
+      hsl(var(--pattern-medium)) 16px
     );
+  }
+  .islamic-pattern {
+    background-image: 
+      radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.1) 1px, transparent 1px),
+      linear-gradient(45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%),
+      linear-gradient(-45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%);
+    background-size: 40px 40px, 20px 20px, 20px 20px;
   }
   .hover-lift {
     @apply transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1;
