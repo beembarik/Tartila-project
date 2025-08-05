@@ -37,7 +37,7 @@
     /* Secondary (Light Sage) */
     --secondary: hsl(var(--light-sage));
     --secondary-foreground: hsl(var(--charcoal));
-    
+
     /* Accent (Soft Gold) */
     --accent: hsl(var(--soft-gold));
     --accent-foreground: hsl(var(--charcoal));
@@ -88,30 +88,39 @@
   .dark {
     --background: hsl(var(--charcoal));
     --foreground: hsl(var(--warm-cream));
-    --card: 0, 0%, 12%;
+
+    --card: hsl(0, 0%, 12%);
     --card-foreground: hsl(var(--warm-cream));
-    --popover: 0, 0%, 12%;
+
+    --popover: hsl(0, 0%, 12%);
     --popover-foreground: hsl(var(--warm-cream));
+
     --primary: hsl(var(--islamic-green-light));
     --primary-foreground: hsl(var(--pure-white));
-    --secondary: 140, 15%, 25%;
+
+    --secondary: hsl(140, 15%, 25%);
     --secondary-foreground: hsl(var(--warm-cream));
-    --muted: 0, 0%, 18%;
+
+    --muted: hsl(0, 0%, 18%);
     --muted-foreground: hsl(var(--soft-gray));
+
     --accent: hsl(var(--soft-gold));
     --accent-foreground: hsl(var(--charcoal));
-    --destructive: 0, 84%, 60%;
+
+    --destructive: hsl(0, 84%, 60%);
     --destructive-foreground: hsl(var(--pure-white));
-    --border: 0, 0%, 18%;
-    --input: 0, 0%, 18%;
+
+    --border: hsl(0, 0%, 18%);
+    --input: hsl(0, 0%, 18%);
     --ring: hsl(var(--islamic-green-light));
+
     --sidebar-background: hsl(var(--charcoal));
     --sidebar-foreground: hsl(var(--warm-cream));
     --sidebar-primary: hsl(var(--islamic-green-light));
     --sidebar-primary-foreground: hsl(var(--pure-white));
     --sidebar-accent: hsl(var(--soft-gold));
     --sidebar-accent-foreground: hsl(var(--charcoal));
-    --sidebar-border: 0, 0%, 18%;
+    --sidebar-border: hsl(0, 0%, 18%);
     --sidebar-ring: hsl(var(--islamic-green-light));
   }
 
