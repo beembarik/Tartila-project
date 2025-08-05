@@ -20,7 +20,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-[hsl(var(--islamic-green)/0.85)] to-[hsl(var(--soft-gold)/0.85)] backdrop-blur-md border-b border-white/15 sticky top-0 z-50 shadow-lg">
+    <nav className="bg-gradient-to-r from-[hsl(var(--islamic-green)/90)] to-[hsl(var(--soft-gold)/90)] backdrop-blur-md border-b border-white/15 sticky top-0 z-50 shadow-lg">
   <div className="container mx-auto px-6">
     <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -33,7 +33,7 @@ export const Navbar = () => {
               />
               <div className="absolute -inset-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="text-white">
+            <div className="text-islamic-green">
               <div className="font-bold text-base md:text-lg tracking-tight">Arabic Learning</div>
               <div className="text-xs opacity-80 font-medium">Huruf Hijaiyah</div>
             </div>
@@ -65,7 +65,7 @@ export const Navbar = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-white hover:bg-white/20 rounded-full p-2 transition-all duration-300"
+              className="md:hidden text-primary hover:bg-white/20 rounded-full p-2 transition-all duration-300"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
