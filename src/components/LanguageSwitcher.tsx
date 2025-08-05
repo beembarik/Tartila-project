@@ -1,23 +1,28 @@
-import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/hooks/useLanguage";
-import { Languages } from "lucide-react";
 
 export const LanguageSwitcher = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'id' : 'en');
+    setLanguage(language === "en" ? "id" : "en");
   };
 
+  const langData = {
+    id: { flag: "🇮🇩", label: "ID" },
+    en: { flag: "🇬🇧", label: "EN" },
+  };
+
+  const { flag, label } = langData[language || "id"]; // default "id"
+
   return (
-    <Button
-      variant="outline"
-      size="sm"
+    <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2"
+      className="flex items-center gap-1 px-2 py-1 text-sm font-semibold rounded-full 
+                 bg-islamic-green-light/20 hover:bg-islamic-green-light/40 
+                 transition-all duration-300"
     >
-      <Languages size={16} />
-      {language === 'en' ? 'Indonesian' : 'English'}
-    </Button>
+      <span className="text-lg">{flag}</span>
+      {label}
+    </button>
   );
 };
