@@ -20,9 +20,9 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gradient-to-r from-primary/95 to-accent/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50 shadow-lg">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+    <nav className="bg-gradient-to-r from-[hsl(var(--islamic-green)/0.85)] to-[hsl(var(--soft-gold)/0.85)] backdrop-blur-md border-b border-white/15 sticky top-0 z-50 shadow-lg">
+  <div className="container mx-auto px-6">
+    <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
           <Link to="/" className="flex items-center gap-3 hover:scale-105 transition-all duration-300 group">
             <div className="relative">
