@@ -21,60 +21,63 @@ export default {
         arabic: ["Amiri", "serif"],
       },
       colors: {
-        /* ===== Custom Islamic Color Palette ===== */
-        "islamic-green": "hsl(var(--islamic-green))",
-        "islamic-green-light": "hsl(var(--islamic-green-light))",
-        "islamic-green-dark": "hsl(var(--islamic-green-dark))",
-        "soft-gold": "hsl(var(--soft-gold))",
-        "soft-gold-light": "hsl(var(--soft-gold-light))",
-        "warm-cream": "hsl(var(--warm-cream))",
-        "light-sage": "hsl(var(--light-sage))",
-        "pure-white": "hsl(var(--pure-white))",
-        charcoal: "hsl(var(--charcoal))",
-        "soft-gray": "hsl(var(--soft-gray))",
-
-        /* ===== ShadCN / UI Colors ===== */
+        // Base colors
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
 
+        // Primary (Islamic Green)
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           light: "hsl(var(--primary-light))",
           dark: "hsl(var(--primary-dark))",
         },
+
+        // Secondary (Light Sage)
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
+
+        // Accent (Soft Gold)
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
           light: "hsl(var(--accent-light))",
         },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+
+        // Muted
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
+
+        // Destructive
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+
+        // Cards & popovers
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+
+        // Pattern colors
         pattern: {
           light: "hsl(var(--pattern-light))",
           medium: "hsl(var(--pattern-medium))",
         },
+
+        // Sidebar
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -91,6 +94,7 @@ export default {
         "gradient-warm": "var(--gradient-warm)",
         "gradient-accent": "var(--gradient-accent)",
         "gradient-islamic": "var(--gradient-islamic)",
+        "gradient-rainbow": "var(--gradient-rainbow)",
       },
       boxShadow: {
         warm: "var(--shadow-warm)",
