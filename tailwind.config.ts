@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -95,13 +94,13 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        accordion-down: {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+        "accordion-down": {
+          "0%": { height: "0" },
+          "100%": { height: "var(--radix-accordion-content-height)" },
         },
-        accordion-up: {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+        "accordion-up": {
+          "0%": { height: "var(--radix-accordion-content-height)" },
+          "100%": { height: "0" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
@@ -111,11 +110,11 @@ export default {
           "0%, 100%": { opacity: "1", transform: "scale(1)" },
           "50%": { opacity: "0.8", transform: "scale(1.05)" },
         },
-        slide-in: {
+        "slide-in": {
           "0%": { transform: "translateX(100%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
-        slide-out: {
+        "slide-out": {
           "0%": { transform: "translateX(0)", opacity: "1" },
           "100%": { transform: "translateX(-100%)", opacity: "0" },
         },

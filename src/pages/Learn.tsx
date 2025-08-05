@@ -136,7 +136,7 @@ const Learn = () => {
               <div className="flex justify-center pt-4">
                 <Button
                   onClick={() => setActiveTab("flashcards")}
-                  className="bg-gradient-primary text-white hover:shadow-gold"
+                  className="bg-gradient-primary text-white hover:shadow-rose"
                 >
                   Study {selectedLetter.name} in Detail
                 </Button>
