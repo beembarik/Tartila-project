@@ -21,11 +21,25 @@ export default {
         arabic: ["Amiri", "serif"],
       },
       colors: {
+        /* ===== Custom Islamic Color Palette ===== */
+        "islamic-green": "hsl(var(--islamic-green))",
+        "islamic-green-light": "hsl(var(--islamic-green-light))",
+        "islamic-green-dark": "hsl(var(--islamic-green-dark))",
+        "soft-gold": "hsl(var(--soft-gold))",
+        "soft-gold-light": "hsl(var(--soft-gold-light))",
+        "warm-cream": "hsl(var(--warm-cream))",
+        "light-sage": "hsl(var(--light-sage))",
+        "pure-white": "hsl(var(--pure-white))",
+        charcoal: "hsl(var(--charcoal))",
+        "soft-gray": "hsl(var(--soft-gray))",
+
+        /* ===== ShadCN / UI Colors ===== */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -76,7 +90,7 @@ export default {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-warm": "var(--gradient-warm)",
         "gradient-accent": "var(--gradient-accent)",
-        "gradient-rainbow": "var(--gradient-rainbow)",
+        "gradient-islamic": "var(--gradient-islamic)",
       },
       boxShadow: {
         warm: "var(--shadow-warm)",
