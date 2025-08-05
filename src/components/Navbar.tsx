@@ -4,6 +4,8 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/hooks/useLanguage";
 import { BookOpen, Menu, X, Home, Brain } from "lucide-react";
 
+const alphabetIllustration = "/assets/alphabet-illustration.jpg";
+
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useLanguage();
@@ -20,10 +22,27 @@ export const Navbar = () => {
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
       {/* Capsule Container */}
-      <div className="flex items-center gap-3 px-4 py-2 rounded-full 
+      <div
+        className="flex items-center gap-4 px-5 py-2 rounded-full 
         bg-[hsl(var(--pure-white)/0.1)] backdrop-blur-md border border-white/20 
-        shadow-islamic transition-all duration-300">
-        
+        shadow-islamic transition-all duration-300"
+      >
+        {/* Branding */}
+        <Link to="/" className="flex items-center gap-2 group">
+          <div className="relative">
+            <img
+              src={alphabetIllustration}
+              alt="Arabic Alphabet"
+              className="w-9 h-9 rounded-full border-2 border-white/30 shadow-lg group-hover:border-white/50 transition-all duration-300"
+            />
+            <div className="absolute -inset-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div className="text-pure-white">
+            <div className="font-bold text-base tracking-tight">Arabic Learning</div>
+            <div className="text-xs opacity-80 font-medium">Huruf Hijaiyah</div>
+          </div>
+        </Link>
+
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-1">
           {menuItems.map((item) => (
@@ -43,9 +62,7 @@ export const Navbar = () => {
         </div>
 
         {/* Language Switcher */}
-        <div className="hidden md:block">
-          <LanguageSwitcher />
-        </div>
+        <LanguageSwitcher />
 
         {/* Mobile Menu Button */}
         <button
@@ -56,11 +73,13 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown (Only Menu Items) */}
       {isMenuOpen && (
-        <div className="absolute top-14 left-1/2 -translate-x-1/2 w-64 
+        <div
+          className="absolute top-16 left-1/2 -translate-x-1/2 w-64 
           bg-[hsl(var(--pure-white)/0.12)] backdrop-blur-md border border-white/20 
-          rounded-2xl shadow-islamic p-4 space-y-2 animate-slide-in">
+          rounded-2xl shadow-islamic p-4 space-y-2 animate-slide-in"
+        >
           {menuItems.map((item) => (
             <Link
               key={item.path}
@@ -76,9 +95,6 @@ export const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <div className="pt-2 border-t border-white/20">
-            <LanguageSwitcher />
-          </div>
         </div>
       )}
     </nav>
