@@ -160,11 +160,10 @@
     );
   }
   .islamic-pattern {
-  background-color: hsl(var(--background)); /* fallback supaya nggak putih polos */
   background-image: 
-    radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.1) 1px, transparent 1px),
-    linear-gradient(45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%),
-    linear-gradient(-45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%);
+    radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.15) 1px, transparent 1px),
+    linear-gradient(45deg, hsl(var(--light-sage) / 0.08) 25%, transparent 25%),
+    linear-gradient(-45deg, hsl(var(--light-sage) / 0.08) 25%, transparent 25%);
   background-size: 40px 40px, 20px 20px, 20px 20px;
 }
   .hover-lift {
