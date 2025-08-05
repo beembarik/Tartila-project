@@ -160,12 +160,13 @@
     );
   }
   .islamic-pattern {
-    background-image: 
-      radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.1) 1px, transparent 1px),
-      linear-gradient(45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%),
-      linear-gradient(-45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%);
-    background-size: 40px 40px, 20px 20px, 20px 20px;
-  }
+  background-color: hsl(var(--background)); /* fallback supaya nggak putih polos */
+  background-image: 
+    radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.1) 1px, transparent 1px),
+    linear-gradient(45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, hsl(var(--light-sage) / 0.05) 25%, transparent 25%);
+  background-size: 40px 40px, 20px 20px, 20px 20px;
+}
   .hover-lift {
     @apply transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1;
   }
