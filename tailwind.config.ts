@@ -82,6 +82,7 @@ export default {
         warm: "var(--shadow-warm)",
         rose: "var(--shadow-rose)",
         soft: "var(--shadow-soft)",
+        gold: "var(--shadow-gold)",
       },
       transitionTimingFunction: {
         spring: "cubic-bezier(0.34, 1.56, 0.64, 1)",
