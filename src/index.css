@@ -53,18 +53,18 @@
     --ring: var(--islamic-green);
 
     /* Islamic-inspired gradients */
-    --gradient-primary: linear-gradient(135deg, var(--islamic-green), var(--islamic-green-light));
-    --gradient-warm: linear-gradient(180deg, var(--warm-cream), var(--light-sage));
-    --gradient-accent: linear-gradient(135deg, var(--soft-gold), var(--soft-gold-light));
-    --gradient-islamic: linear-gradient(90deg, var(--islamic-green), var(--soft-gold), var(--light-sage));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--islamic-green)), hsl(var(--islamic-green-light)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(var(--light-sage)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--soft-gold)), hsl(var(--soft-gold-light)));
+    --gradient-islamic: linear-gradient(90deg, hsl(var(--islamic-green)), hsl(var(--soft-gold)), hsl(var(--light-sage)));
 
     /* Islamic patterns & shadows */
     --pattern-light: var(--light-sage);
     --pattern-medium: var(--islamic-green);
-    --shadow-warm: 0 8px 25px -8px var(--soft-gold) / 0.25;
-    --shadow-islamic: 0 6px 20px var(--islamic-green) / 0.15;
-    --shadow-soft: 0 4px 15px var(--light-sage) / 0.2;
-    --shadow-gold: 0 8px 30px -10px var(--soft-gold) / 0.3;
+    --shadow-warm: 0 8px 25px -8px hsl(var(--soft-gold) / 0.25);
+    --shadow-islamic: 0 6px 20px hsl(var(--islamic-green) / 0.15);
+    --shadow-soft: 0 4px 15px hsl(var(--light-sage) / 0.2);
+    --shadow-gold: 0 8px 30px -10px hsl(var(--soft-gold) / 0.3);
 
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -132,12 +132,12 @@
     @apply bg-background text-foreground font-poppins;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     background-image: 
-      radial-gradient(circle at 15% 15%, var(--islamic-green) / 0.25 0%, transparent 50%),
-      radial-gradient(circle at 85% 25%, var(--soft-gold) / 0.18 0%, transparent 45%),
-      radial-gradient(circle at 70% 85%, var(--islamic-green-light) / 0.15 0%, transparent 40%),
-      radial-gradient(circle at 25% 75%, var(--accent) / 0.12 0%, transparent 50%),
-      radial-gradient(circle at 90% 90%, var(--islamic-green-dark) / 0.08 0%, transparent 35%),
-      linear-gradient(135deg, var(--warm-cream) 0%, var(--light-sage) / 0.3 100%);
+      radial-gradient(circle at 15% 15%, hsl(var(--islamic-green) / 0.25) 0%, transparent 50%),
+      radial-gradient(circle at 85% 25%, hsl(var(--soft-gold) / 0.18) 0%, transparent 45%),
+      radial-gradient(circle at 70% 85%, hsl(var(--islamic-green-light) / 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 25% 75%, hsl(var(--accent) / 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 90% 90%, hsl(var(--islamic-green-dark) / 0.08) 0%, transparent 35%),
+      linear-gradient(135deg, hsl(var(--warm-cream)) 0%, hsl(var(--light-sage) / 0.3) 100%);
     background-attachment: fixed;
   }
 }
@@ -158,17 +158,17 @@
   .pattern-border {
     background-image: repeating-linear-gradient(
       45deg,
-      var(--pattern-light),
-      var(--pattern-light) 8px,
-      var(--pattern-medium) 8px,
-      var(--pattern-medium) 16px
+      hsl(var(--pattern-light)),
+      hsl(var(--pattern-light)) 8px,
+      hsl(var(--pattern-medium)) 8px,
+      hsl(var(--pattern-medium)) 16px
     );
   }
   .islamic-pattern {
   background-image: 
-    radial-gradient(circle at 20px 20px, var(--islamic-green) / 0.15 1px, transparent 1px),
-    linear-gradient(45deg, var(--light-sage) / 0.08 25%, transparent 25%),
-    linear-gradient(-45deg, var(--light-sage) / 0.08 25%, transparent 25%);
+    radial-gradient(circle at 20px 20px, hsl(var(--islamic-green) / 0.15) 1px, transparent 1px),
+    linear-gradient(45deg, hsl(var(--light-sage) / 0.08) 25%, transparent 25%),
+    linear-gradient(-45deg, hsl(var(--light-sage) / 0.08) 25%, transparent 25%);
   background-size: 40px 40px, 20px 20px, 20px 20px;
 }
   .hover-lift {
