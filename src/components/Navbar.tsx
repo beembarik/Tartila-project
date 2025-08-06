@@ -86,8 +86,8 @@ export const Navbar = () => {
               to={item.path}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                 isActive(item.path)
-                  ? "bg-accent text-white shadow-md"
-                  : "text-gray-800 hover:bg-primary/10 hover:text-primary"
+                  ? "bg-primary-light text-white shadow-md"
+                  : "text-gray-800 hover:bg-accent/80 hover:text-gray-500"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
