@@ -23,8 +23,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased pt-20">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-secondary/60 islamic-pattern/50 text-white/70">
-        <div className="absolute inset-0 bg-primary backdrop-blur-[2px]"></div>
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-secondary/60 islamic-pattern/50 text-white">
+        <div className="absolute inset-0 bg-gradient-warm backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 text-center">
           <div className="flex justify-center mb-8">
             <div className="relative">
