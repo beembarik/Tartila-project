@@ -1,5 +1,7 @@
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/hooks/useLanguage';
+import { gamificationTranslations } from '@/data/translations/gamification';
 import { cn } from '@/lib/utils';
 
 interface Achievement {
@@ -17,6 +19,8 @@ interface AchievementBadgeProps {
 }
 
 export function AchievementBadge({ achievement, className }: AchievementBadgeProps) {
+  const { language } = useLanguage();
+  const gt = gamificationTranslations[language];
   return (
     <div className={cn(
       "flex flex-col items-center p-3 rounded-xl border transition-all duration-300",
@@ -45,7 +49,7 @@ export function AchievementBadge({ achievement, className }: AchievementBadgePro
 
       {achievement.earned && (
         <Badge variant="secondary" className="mt-2 text-xs">
-          Earned!
+          {gt.earned}
         </Badge>
       )}
     </div>

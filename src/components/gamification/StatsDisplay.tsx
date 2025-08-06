@@ -1,9 +1,13 @@
 import React from 'react';
 import { useGamification } from '@/contexts/GamificationContext';
+import { useLanguage } from '@/hooks/useLanguage';
+import { gamificationTranslations } from '@/data/translations/gamification';
 import { Target, Award, Flame, CheckCircle } from 'lucide-react';
 
 export function StatsDisplay() {
   const { data } = useGamification();
+  const { language } = useLanguage();
+  const gt = gamificationTranslations[language];
 
   const accuracy = data.totalQuestions > 0 
     ? Math.round((data.correctAnswers / data.totalQuestions) * 100) 
@@ -12,25 +16,25 @@ export function StatsDisplay() {
   const stats = [
     {
       icon: Target,
-      label: 'Accuracy',
+      label: gt.accuracy,
       value: `${accuracy}%`,
       color: 'text-primary'
     },
     {
       icon: CheckCircle,
-      label: 'Correct',
+      label: gt.correct,
       value: data.correctAnswers.toString(),
       color: 'text-accent'
     },
     {
       icon: Flame,
-      label: 'Streak',
-      value: `${data.streakDays} days`,
+      label: gt.streak,
+      value: `${data.streakDays} ${gt.days}`,
       color: 'text-orange-500'
     },
     {
       icon: Award,
-      label: 'Achievements',
+      label: gt.achievements,
       value: data.achievements.filter(a => a.earned).length.toString(),
       color: 'text-purple-500'
     }

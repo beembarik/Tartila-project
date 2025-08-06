@@ -37,10 +37,10 @@ const Index = () => {
             </div>
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in drop-shadow-2xl leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in drop-shadow-2xl leading-tight text-white">
             {t.index.heroTitle}
           </h1>
-          <p className="text-base md:text-lg lg:text-xl opacity-95 max-w-3xl mx-auto font-medium leading-relaxed mb-8">
+          <p className="text-base md:text-lg lg:text-xl opacity-95 max-w-3xl mx-auto font-medium leading-relaxed mb-8 text-white/90">
             {t.index.heroSubtitle}
           </p>
 
