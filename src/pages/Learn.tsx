@@ -61,7 +61,7 @@ const Learn = () => {
   }, [arabicAlphabet]);
 
   return (
-    <div className="min-h-screen bg-gradient-rainbow py-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-rainbow py-8 pt-24 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 fade-in">
           <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-float">

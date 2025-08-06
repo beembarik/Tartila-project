@@ -236,7 +236,7 @@ export const EnhancedAudioPlayer = ({
           </Button>
 
           <Button
-            variant={isPlaying ? "destructive" : "default"}
+            variant={isPlaying ? "outline" : "default"}
             size="lg"
             onClick={isPlaying ? stopPronunciation : playPronunciation}
             disabled={isLoading}

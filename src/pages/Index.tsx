@@ -21,7 +21,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="min-h-screen bg-background text-foreground antialiased pt-20">
       {/* HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-primary islamic-pattern text-white">
         <div className="absolute inset-0 bg-primary/60 backdrop-blur-[2px]"></div>

@@ -54,7 +54,7 @@ const Quiz = () => {
 
   if (activeQuiz) {
     return (
-      <div className="min-h-screen bg-gradient-warm py-8">
+      <div className="min-h-screen bg-gradient-warm py-8 pt-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <Button
@@ -94,7 +94,7 @@ const Quiz = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-warm py-8">
+    <div className="min-h-screen bg-gradient-warm py-8 pt-24">
       <div className="container mx-auto px-4">
         {/* Gamification Dashboard */}
         <div className="mb-8">
