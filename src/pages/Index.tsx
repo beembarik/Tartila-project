@@ -23,8 +23,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased pt-20">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-primary-light islamic-pattern text-white">
-        <div className="absolute inset-0 bg-primary-light backdrop-blur-[2px]"></div>
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-charcoal islamic-pattern text-white">
+        <div className="absolute inset-0 bg-charcoal backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 text-center">
           <div className="flex justify-center mb-8">
             <div className="relative">
@@ -63,8 +63,8 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="gradient"
-              className="shadow-2xl px-8 py-4 text-gold md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              variant="primary-light"
+              className="shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/learn" className="flex items-center justify-center gap-3">
                 <BookOpen size={20} />
@@ -77,7 +77,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="gold"
-              className="font-bold shadow-2xl px-8 py-4 text-gradient md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              className="font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/quiz" className="flex items-center justify-center gap-3">
                 <Brain size={20} />
