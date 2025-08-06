@@ -14,9 +14,9 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const menuItems = [
-    { path: "/", label: t.navigation.home, icon: Home, activeColor: "bg-islamic-green" },
-    { path: "/learn", label: t.navigation.learn, icon: BookOpen, activeColor: "bg-islamic-green" },
-    { path: "/quiz", label: t.navigation.quiz, icon: Brain, activeColor: "bg-accent" }, // kuning
+    { path: "/", label: t.navigation.home, icon: Home },
+    { path: "/learn", label: t.navigation.learn, icon: BookOpen },
+    { path: "/quiz", label: t.navigation.quiz, icon: Brain },
   ];
 
   return (
@@ -51,7 +51,7 @@ export const Navbar = () => {
               to={item.path}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 isActive(item.path)
-                  ? `${item.activeColor} text-white shadow-md`
+                  ? "bg-accent text-white shadow-md"
                   : "text-gray-800 hover:bg-primary/10 hover:text-primary"
               }`}
             >
@@ -86,7 +86,7 @@ export const Navbar = () => {
               to={item.path}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                 isActive(item.path)
-                  ? `${item.activeColor} text-white shadow-md`
+                  ? "bg-accent text-white shadow-md"
                   : "text-gray-800 hover:bg-primary/10 hover:text-primary"
               }`}
               onClick={() => setIsMenuOpen(false)}
