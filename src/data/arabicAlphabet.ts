@@ -44,6 +44,7 @@ export const getMakhrajColor = (makhraj: string): string => {
     "Tooth Ridge": "bg-gradient-accent", 
     "Between teeth": "bg-accent",
     "Middle of tongue": "bg-primary",
+    "Lidah bagian tengah": "bg-primary",
     "Middle of throat": "bg-gradient-warm"
   };
   
