@@ -23,17 +23,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased pt-20">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-charcoal islamic-pattern text-white">
-        <div className="absolute inset-0 bg-charcoal backdrop-blur-[2px]"></div>
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-primary-light text-white">
+        <div className="absolute inset-0 bg-primary-light backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 text-center">
           <div className="flex justify-center mb-8">
             <div className="relative">
               <img
                 src={alphabetIllustration}
                 alt="Arabic Alphabet"
-                className="w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white/30 animate-float shadow-2xl"
+                className="w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white/50 animate-float shadow-2xl"
               />
-              <div className="absolute -inset-2 bg-white/40 rounded-full animate-float"></div>
+              <div className="absolute -inset-2 bg-white/10 rounded-full animate-float"></div>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="primary-light"
+              variant="gradient"
               className="shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/learn" className="flex items-center justify-center gap-3">
@@ -76,7 +76,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="gold"
+              variant="primary"
               className="font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/quiz" className="flex items-center justify-center gap-3">
