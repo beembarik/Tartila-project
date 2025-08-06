@@ -14,18 +14,18 @@ export const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const menuItems = [
-    { path: "/", label: t.navigation.home, icon: Home },
-    { path: "/learn", label: t.navigation.learn, icon: BookOpen },
-    { path: "/quiz", label: t.navigation.quiz, icon: Brain },
+    { path: "/", label: t.navigation.home, icon: Home, activeColor: "bg-islamic-green" },
+    { path: "/learn", label: t.navigation.learn, icon: BookOpen, activeColor: "bg-islamic-green" },
+    { path: "/quiz", label: t.navigation.quiz, icon: Brain, activeColor: "bg-accent" }, // kuning
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
       {/* Capsule Container */}
       <div
         className="flex items-center gap-4 px-5 py-2 rounded-full 
-        bg-[hsl(var(--pure-white)/0.1)] backdrop-blur-md border border-white/20 
-        shadow-islamic transition-all duration-300"
+        bg-white/80 backdrop-blur-md border border-white/30 
+        shadow-lg transition-all duration-300"
       >
         {/* Branding */}
         <Link to="/" className="flex items-center gap-2 group">
@@ -37,7 +37,7 @@ export const Navbar = () => {
             />
             <div className="absolute -inset-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
-          <div className="text-pure-white">
+          <div className="text-gray-800">
             <div className="font-bold text-base tracking-tight">Arabic Learning</div>
             <div className="text-xs opacity-80 font-medium">Huruf Hijaiyah</div>
           </div>
@@ -51,8 +51,8 @@ export const Navbar = () => {
               to={item.path}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 isActive(item.path)
-                  ? "bg-islamic-green text-pure-white shadow-gold"
-                  : "text-pure-white/90 hover:bg-islamic-green-light/20 hover:text-pure-white"
+                  ? `${item.activeColor} text-white shadow-md`
+                  : "text-gray-800 hover:bg-primary/10 hover:text-primary"
               }`}
             >
               <item.icon size={16} />
@@ -66,19 +66,19 @@ export const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-pure-white hover:bg-islamic-green-light/20 p-2 rounded-full"
+          className="md:hidden text-gray-800 hover:bg-primary/10 p-2 rounded-full"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile Dropdown (Only Menu Items) */}
+      {/* Mobile Dropdown */}
       {isMenuOpen && (
         <div
           className="absolute top-16 left-1/2 -translate-x-1/2 w-64 
-          bg-[hsl(var(--pure-white)/0.12)] backdrop-blur-md border border-white/20 
-          rounded-2xl shadow-islamic p-4 space-y-2 animate-slide-in"
+          bg-white/90 backdrop-blur-md border border-white/30 
+          rounded-2xl shadow-lg p-4 space-y-2 animate-slide-in"
         >
           {menuItems.map((item) => (
             <Link
@@ -86,8 +86,8 @@ export const Navbar = () => {
               to={item.path}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
                 isActive(item.path)
-                  ? "bg-islamic-green text-pure-white shadow-gold"
-                  : "text-pure-white/90 hover:bg-islamic-green-light/25 hover:text-pure-white"
+                  ? `${item.activeColor} text-white shadow-md`
+                  : "text-gray-800 hover:bg-primary/10 hover:text-primary"
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
