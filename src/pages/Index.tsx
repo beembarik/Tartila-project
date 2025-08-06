@@ -23,8 +23,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased pt-20">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-primary islamic-pattern text-black/60">
-        <div className="absolute inset-0 bg-primary/60 backdrop-blur-[2px]"></div>
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-primary islamic-pattern text-green">
+        <div className="absolute inset-0 bg-primary backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 text-center">
           <div className="flex justify-center mb-8">
             <div className="relative">
@@ -37,10 +37,10 @@ const Index = () => {
             </div>
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in drop-shadow-2xl leading-tight text-white">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 animate-fade-in drop-shadow-2xl leading-tight text-base">
             {t.index.heroTitle}
           </h1>
-          <p className="text-base md:text-lg lg:text-xl opacity-95 max-w-3xl mx-auto font-medium leading-relaxed mb-8 text-white/90">
+          <p className="text-base md:text-lg lg:text-xl opacity-95 max-w-3xl mx-auto font-medium leading-relaxed mb-8 text-primary/90">
             {t.index.heroSubtitle}
           </p>
 
