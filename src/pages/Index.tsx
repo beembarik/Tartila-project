@@ -23,7 +23,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased pt-20">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-primary islamic-pattern text-green">
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-primary/90 islamic-pattern text-base">
         <div className="absolute inset-0 bg-primary backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 text-center">
           <div className="flex justify-center mb-8">
@@ -45,15 +45,15 @@ const Index = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
-            <Badge className="bg-white/20 backdrop-blur-sm text-white px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
+            <Badge className="bg-white/20 backdrop-blur-sm text-base px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
               <Star className="mr-2 h-4 w-4" />
               {t.index.badges.letters}
             </Badge>
-            <Badge className="bg-white/20 backdrop-blur-sm text-white px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
+            <Badge className="bg-white/20 backdrop-blur-sm text-base px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
               <Volume2 className="mr-2 h-4 w-4" />
               {t.index.badges.audio}
             </Badge>
-            <Badge className="bg-white/20 backdrop-blur-sm text-white px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
+            <Badge className="bg-white/20 backdrop-blur-sm text-base px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
               <BookOpen className="mr-2 h-4 w-4" />
               {t.index.badges.tajweed}
             </Badge>
