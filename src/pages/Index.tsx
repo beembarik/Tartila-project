@@ -64,7 +64,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="gradient"
-              className="shadow-2xl px-8 py-4 text-white/80 md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              className="shadow-2xl px-8 py-4 text-gold md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/learn" className="flex items-center justify-center gap-3">
                 <BookOpen size={20} />
@@ -77,7 +77,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="gold"
-              className="font-bold shadow-2xl px-8 py-4 text-white/80 md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              className="font-bold shadow-2xl px-8 py-4 text-gradient md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/quiz" className="flex items-center justify-center gap-3">
                 <Brain size={20} />
