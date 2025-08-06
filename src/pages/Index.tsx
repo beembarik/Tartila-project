@@ -63,7 +63,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="gradient"
+              variant="secondary"
               className="shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/learn" className="flex items-center justify-center gap-3">
@@ -76,7 +76,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="primary"
+              variant="accent"
               className="font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/quiz" className="flex items-center justify-center gap-3">
