@@ -7,16 +7,16 @@
 @layer base {
   :root {
     /* Islamic-inspired color palette (HSL format) */
-    --islamic-green: 140, 68%, 28%;       /* #1E7145 */
-    --islamic-green-light: 140, 68%, 45%; /* #2E9A5F */
-    --islamic-green-dark: 140, 68%, 20%;  /* #1A5A38 */
-    --soft-gold: 45, 80%, 70%;            /* #E5C878 */
-    --soft-gold-light: 45, 85%, 85%;      /* #F0DC9E */
-    --warm-cream: 40, 25%, 95%;           /* #F7F5F2 */
-    --light-sage: 140, 15%, 85%;          /* #D4DDD7 */
-    --pure-white: 0, 0%, 100%;            /* #FFFFFF */
-    --charcoal: 0, 0%, 15%;               /* #262626 */
-    --soft-gray: 0, 0%, 45%;              /* #737373 */
+    --islamic-green: 140, 75%, 32%;       /* lebih jenuh & sedikit lebih terang */
+    --islamic-green-light: 140, 75%, 50%; /* lebih segar */
+    --islamic-green-dark: 140, 75%, 22%;  /* tetap tegas tapi vibrant */
+    --soft-gold: 45, 88%, 68%;            /* lebih kaya warna */
+    --soft-gold-light: 45, 90%, 80%;      /* lebih bersinar */
+    --warm-cream: 40, 30%, 96%;           /* sedikit lebih cerah */
+    --light-sage: 140, 25%, 82%;          /* hijau lembut lebih jelas */
+    --pure-white: 0, 0%, 100%;            /* tetap putih murni */
+    --charcoal: 0, 0%, 12%;               /* lebih pekat untuk kontras */
+    --soft-gray: 0, 0%, 42%;              /* sedikit lebih gelap untuk kontras */
 
     /* Base */
     --background: var(--warm-cream);
