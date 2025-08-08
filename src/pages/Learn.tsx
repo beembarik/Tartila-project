@@ -4,7 +4,6 @@ import { AlphabetGrid } from "@/components/AlphabetGrid";
 import { NavigationControls } from "@/components/NavigationControls";
 import { EnhancedAudioPlayer } from "@/components/EnhancedAudioPlayer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Grid3X3 } from "lucide-react";
 import { ArabicLetter } from "@/data/arabicAlphabet";
@@ -84,29 +83,8 @@ const Learn = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="flashcards" className="space-y-8">
-            {/* Flashcard */}
-            <div className="flex justify-center fade-in">
-              <AlphabetCard
-                letter={currentLetter}
-                isFlipped={isCardFlipped}
-                onFlip={handleFlip}
-                onPlaySound={handlePlaySound}
-              />
-            </div>
-
-            {/* Audio Player */}
-            <div className="flex justify-center slide-up">
-              <div className="w-80">
-                <EnhancedAudioPlayer
-                  letterName={currentLetter.name}
-                  arabicLetter={currentLetter.arabic}
-                  letterId={currentLetter.id}
-                />
-              </div>
-            </div>
-
-            {/* Navigation Controls */}
+          <TabsContent value="flashcards" className="space-y-6">
+            {/* Navigation Controls moved to top */}
             <div className="flex justify-center">
               <NavigationControls
                 currentIndex={currentLetterIndex}
@@ -118,6 +96,28 @@ const Learn = () => {
                 isFlipped={isCardFlipped}
               />
             </div>
+
+            {/* Flashcard with reduced height */}
+            <div className="flex justify-center fade-in">
+              <AlphabetCard
+                letter={currentLetter}
+                isFlipped={isCardFlipped}
+                onFlip={handleFlip}
+                onPlaySound={handlePlaySound}
+                className="h-[260px] md:h-[340px]" // <-- reduced height
+              />
+            </div>
+
+            {/* Audio Player placed lower */}
+            <div className="flex justify-center slide-up pt-4">
+              <div className="w-80">
+                <EnhancedAudioPlayer
+                  letterName={currentLetter.name}
+                  arabicLetter={currentLetter.arabic}
+                  letterId={currentLetter.id}
+                />
+              </div>
+            </div>
           </TabsContent>
 
           <TabsContent value="grid" className="space-y-6">
@@ -125,13 +125,13 @@ const Learn = () => {
               <h2 className="text-2xl font-bold text-primary mb-2">Arabic Alphabet Grid</h2>
               <p className="text-muted-foreground">Click on any letter to study it in detail</p>
             </div>
-            
+
             <AlphabetGrid
               letters={arabicAlphabet}
               selectedLetter={selectedLetter}
               onLetterSelect={handleLetterSelect}
             />
-            
+
             {selectedLetter && (
               <div className="flex justify-center pt-4">
                 <Button
