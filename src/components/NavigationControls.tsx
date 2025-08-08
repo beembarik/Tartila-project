@@ -37,7 +37,7 @@ export const NavigationControls = ({
           onClick={onPrevious}
           disabled={currentIndex === 0}
           aria-label={t.navigation.previous}
-          className="bg-islamic-green/10        text-islamic-green border-islamic-green hover:bg-islamic-green hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-accent        text-primary hover:bg-secondary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronLeft size={16} />
         </Button>
@@ -68,7 +68,7 @@ export const NavigationControls = ({
           onClick={onNext}
           disabled={currentIndex === totalCount - 1}
           aria-label={t.navigation.previous}
-          className="bg-islamic-green/10        text-islamic-green border-islamic-green hover:bg-islamic-green hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-accent        text-primary hover:bg-secondary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronRight size={16} />
         </Button>
