@@ -31,16 +31,16 @@ export const NavigationControls = ({
 
       {/* Navigation Buttons */}  
       <div className="flex flex-wrap justify-center gap-2 w-full">  
-        <Button  
-          variant="outline"  
-          size="sm"  
-          onClick={onPrevious}  
-          disabled={currentIndex === 0}  
-          className="flex items-center gap-1"  
-        >  
-          <ChevronLeft size={16} />  
-          {t.navigation.previous}  
-        </Button>  
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={onPrevious}
+          disabled={currentIndex === 0}
+          aria-label={t.navigation.previous}
+          className="bg-islamic-green/10        text-islamic-green border-islamic-green hover:bg-islamic-green hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <ChevronLeft size={16} />
+        </Button>
 
         <Button  
           variant="outline"  
@@ -62,16 +62,17 @@ export const NavigationControls = ({
           {t.navigation.shuffle}  
         </Button>  
 
-        <Button  
-          variant="outline"  
-          size="sm"  
-          onClick={onNext}  
-          disabled={currentIndex === totalCount - 1}  
-          className="flex items-center gap-1"  
-        >  
-          {t.navigation.next}  
-          <ChevronRight size={16} />  
-        </Button>  
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={onNext}
+          disabled={currentIndex === totalCount - 1}
+          aria-label={t.navigation.previous}
+          className="bg-islamic-green/10        text-islamic-green border-islamic-green hover:bg-islamic-green hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <ChevronLeft size={16} />
+        </Button>
+ 
       </div>  
     </div>
 
