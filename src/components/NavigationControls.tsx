@@ -70,7 +70,7 @@ export const NavigationControls = ({
           aria-label={t.navigation.previous}
           className="bg-islamic-green/10        text-islamic-green border-islamic-green hover:bg-islamic-green hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <ChevronLeft size={16} />
+          <ChevronRight size={16} />
         </Button>
  
       </div>  
