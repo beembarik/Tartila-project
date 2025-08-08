@@ -30,7 +30,7 @@ export const NavigationControls = ({
       </div>
 
       {/* Navigation Buttons */}  
-      <div className="flex items-center gap-2">  
+      <div className="flex flex-wrap justify-center gap-2 w-full">  
         <Button  
           variant="outline"  
           size="sm"  
