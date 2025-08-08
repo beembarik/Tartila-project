@@ -33,7 +33,7 @@ export const NavigationControls = ({
       {/* Navigation Buttons */}
       <div className="flex items-center gap-2">
         <Button
-          variant="default"
+          variant="secondary"
           size="icon"
           onClick={onPrevious}
           disabled={currentIndex === 0}
@@ -43,7 +43,7 @@ export const NavigationControls = ({
         </Button>
 
         <Button
-          variant="outline"
+          variant="secondary"
           size="sm"
           onClick={onFlip}
           className="flex items-center gap-1"
@@ -53,7 +53,7 @@ export const NavigationControls = ({
         </Button>
 
         <Button
-          variant="default"
+          variant="outline"
           size="sm"
           onClick={onShuffle}
           className="flex items-center gap-1"
