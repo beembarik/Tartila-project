@@ -22,7 +22,6 @@ export const NavigationControls = ({
   isFlipped
 }: NavigationControlsProps) => {
   const { t } = useLanguage();
-
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-md mx-auto">
       {/* Progress Indicator */}
@@ -30,48 +29,51 @@ export const NavigationControls = ({
         {currentIndex + 1} of {totalCount}
       </div>
 
-      {/* Navigation Buttons */}
-      <div className="flex items-center gap-2">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={onPrevious}
-          disabled={currentIndex === 0}
-          aria-label={t.navigation.previous}
-        >
-          <ChevronLeft size={16} />
-        </Button>
+      {/* Navigation Buttons */}  
+      <div className="flex items-center gap-2">  
+        <Button  
+          variant="outline"  
+          size="sm"  
+          onClick={onPrevious}  
+          disabled={currentIndex === 0}  
+          className="flex items-center gap-1"  
+        >  
+          <ChevronLeft size={16} />  
+          {t.navigation.previous}  
+        </Button>  
 
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onFlip}
-          className="flex items-center gap-1"
-        >
-          <RotateCcw size={16} />
-          {isFlipped ? t.actions.flip : t.actions.details}
-        </Button>
+        <Button  
+          variant="outline"  
+          size="sm"  
+          onClick={onFlip}  
+          className="flex items-center gap-1"  
+        >  
+          <RotateCcw size={16} />  
+          {isFlipped ? t.actions.flip : t.actions.details}  
+        </Button>   
 
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onShuffle}
-          className="flex items-center gap-1"
-        >
-          <Shuffle size={16} />
-          {t.navigation.shuffle}
-        </Button>
+        <Button  
+          variant="outline"  
+          size="sm"  
+          onClick={onShuffle}  
+          className="flex items-center gap-1"  
+        >  
+          <Shuffle size={16} />  
+          {t.navigation.shuffle}  
+        </Button>  
 
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={onNext}
-          disabled={currentIndex === totalCount - 1}
-          aria-label={t.navigation.next}
-        >
-          <ChevronRight size={16} />
-        </Button>
-      </div>
+        <Button  
+          variant="outline"  
+          size="sm"  
+          onClick={onNext}  
+          disabled={currentIndex === totalCount - 1}  
+          className="flex items-center gap-1"  
+        >  
+          {t.navigation.next}  
+          <ChevronRight size={16} />  
+        </Button>  
+      </div>  
     </div>
+
   );
 };
