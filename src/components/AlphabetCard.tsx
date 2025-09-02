@@ -65,7 +65,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound, className
                   e.stopPropagation();
                   onPlaySound();
                 }}
-                className="flex items-center gap-2 hover:bg-accent hover:text-white"
+                className="flex items-center gap-2 hover:bg-primary hover:text-primary-foreground border-primary/50"
               >
                 <Volume2 size={16} />
                 {t.actions.listen}
@@ -73,7 +73,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound, className
               <Button
                 variant="outline"
                 size="sm"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 hover:bg-secondary hover:text-secondary-foreground border-primary/50"
               >
                 <Eye size={16} />
                 {t.actions.details}
@@ -160,7 +160,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound, className
                   e.stopPropagation();
                   onPlaySound();
                 }}
-                className="flex items-center gap-2 flex-1"
+                className="flex items-center gap-2 flex-1 hover:bg-primary hover:text-primary-foreground"
               >
                 <Volume2 size={14} />
                 {t.actions.pronunciation}
@@ -172,7 +172,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound, className
                   e.stopPropagation();
                   onFlip();
                 }}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 hover:bg-secondary hover:text-secondary-foreground"
               >
                 <RotateCcw size={14} />
                 {t.actions.flip}
