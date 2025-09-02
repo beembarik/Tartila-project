@@ -16,6 +16,8 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Label } from "@/components/ui/label";
+import { getComprehensiveLetterForms, formatComprehensiveDisplay } from "@/utils/arabicLetterForms";
+import { ArabicLetter } from "@/data/arabicAlphabet";
 
 interface EnhancedAudioPlayerProps {
   letterName: string;
@@ -39,6 +41,11 @@ export const EnhancedAudioPlayer = ({
   
   const audioRef = useRef<HTMLAudioElement>(null);
   const { toast } = useToast();
+  
+  // Get comprehensive letter forms
+  const letterObj = { arabic: arabicLetter, id: letterId } as ArabicLetter;
+  const comprehensiveForms = getComprehensiveLetterForms(letterObj);
+  const comprehensiveDisplay = formatComprehensiveDisplay(comprehensiveForms);
 
   // Update audio properties when controls change
   useEffect(() => {
@@ -198,8 +205,8 @@ export const EnhancedAudioPlayer = ({
       <CardContent className="p-6 space-y-4">
         {/* Arabic Letter Display */}
         <div className="text-center space-y-2">
-          <div className="text-6xl font-bold text-primary animate-glow">
-            {arabicLetter}
+          <div className="text-2xl font-bold text-primary font-arabic leading-relaxed animate-glow">
+            {comprehensiveDisplay}
           </div>
           <div className="text-lg text-muted-foreground">
             {letterName}

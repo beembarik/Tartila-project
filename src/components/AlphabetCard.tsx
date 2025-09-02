@@ -11,14 +11,15 @@ interface AlphabetCardProps {
   isFlipped: boolean;
   onFlip: () => void;
   onPlaySound: () => void;
+  className?: string;
 }
 
-export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: AlphabetCardProps) => {
+export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound, className }: AlphabetCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguage();
 
   return (
-    <div className="relative w-full max-w-md mx-auto perspective-1000">
+    <div className={`relative w-full max-w-md mx-auto perspective-1000 ${className || ''}`}>
       <Card 
         className={`
           relative h-[500px] transition-transform duration-700 transform-style-preserve-3d cursor-pointer
