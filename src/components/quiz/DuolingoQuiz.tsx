@@ -211,7 +211,7 @@ export const DuolingoQuiz = ({ letters, settings, onComplete }: DuolingoQuizProp
                       : "bg-red-100 border-red-500 text-red-700"
                     : isAnswered && option === currentQuestion.correctAnswer
                     ? "bg-green-100 border-green-500 text-green-700"
-                    : "hover:bg-accent"
+                    : "hover:bg-secondary"
                 } ${
                   isAnswered &&
                   option !== currentQuestion.correctAnswer &&

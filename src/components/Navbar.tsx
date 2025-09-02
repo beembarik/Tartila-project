@@ -4,7 +4,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/hooks/useLanguage";
 import { BookOpen, Menu, X, Home, Brain } from "lucide-react";
 
-const alphabetIllustration = "/assets/alphabet-illustration.jpg";
+const alphabetIllustration = "/favicon.ico";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +23,7 @@ export const Navbar = () => {
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
       {/* Capsule Container */}
       <div
-        className="flex items-center gap-4 px-5 py-2 rounded-full 
+        className="flex items-center justify-between gap-4 px-5 py-2 rounded-full 
         bg-white/80 backdrop-blur-md border border-white/30 
         shadow-lg transition-all duration-300"
       >
@@ -32,14 +32,14 @@ export const Navbar = () => {
           <div className="relative">
             <img
               src={alphabetIllustration}
-              alt="Arabic Alphabet"
+              alt="Tartila"
               className="w-9 h-9 rounded-full border-2 border-white/30 shadow-lg group-hover:border-white/50 transition-all duration-300"
             />
             <div className="absolute -inset-1 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           <div className="text-gray-800">
-            <div className="font-bold text-base tracking-tight">Arabic Learning</div>
-            <div className="text-xs opacity-80 font-medium">Huruf Hijaiyah</div>
+            <div className="font-bold text-base tracking-tight">Tatila</div>
+            <div className="text-xs opacity-80 font-medium">{t.tagline}</div>
           </div>
         </Link>
 

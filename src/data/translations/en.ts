@@ -9,6 +9,7 @@ export const enTranslations = {
     learn: "Learn",
     quiz: "Quiz"
   },
+  tagline: "Fun Tajweed on The Go",
   
   // Card actions
   actions: {

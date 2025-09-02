@@ -11,7 +11,7 @@ export const idTranslations: TranslationKeys = {
     learn: "Belajar",
     quiz: "Kuis"
   },
-  
+  tagline: "Cara seru belajar Tajwid",
   // Card actions
   actions: {
     listen: "Dengar",
