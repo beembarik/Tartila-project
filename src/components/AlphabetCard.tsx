@@ -11,14 +11,15 @@ interface AlphabetCardProps {
   isFlipped: boolean;
   onFlip: () => void;
   onPlaySound: () => void;
+  className?: string;
 }
 
-export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: AlphabetCardProps) => {
+export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound, className }: AlphabetCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguage();
 
   return (
-    <div className="relative w-full max-w-md mx-auto perspective-1000">
+    <div className={`relative w-full max-w-md mx-auto perspective-1000 ${className || ''}`}>
       <Card 
         className={`
           relative h-[500px] transition-transform duration-700 transform-style-preserve-3d cursor-pointer
@@ -64,7 +65,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                   e.stopPropagation();
                   onPlaySound();
                 }}
-                className="flex items-center gap-2 hover:bg-accent hover:text-white"
+                className="flex items-center gap-2 hover:bg-primary hover:text-primary-foreground border-primary/50"
               >
                 <Volume2 size={16} />
                 {t.actions.listen}
@@ -72,7 +73,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
               <Button
                 variant="outline"
                 size="sm"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 hover:bg-secondary hover:text-secondary-foreground border-primary/50"
               >
                 <Eye size={16} />
                 {t.actions.details}
@@ -159,7 +160,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                   e.stopPropagation();
                   onPlaySound();
                 }}
-                className="flex items-center gap-2 flex-1"
+                className="flex items-center gap-2 flex-1 hover:bg-primary hover:text-primary-foreground"
               >
                 <Volume2 size={14} />
                 {t.actions.pronunciation}
@@ -171,7 +172,7 @@ export const AlphabetCard = ({ letter, isFlipped, onFlip, onPlaySound }: Alphabe
                   e.stopPropagation();
                   onFlip();
                 }}
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 hover:bg-secondary hover:text-secondary-foreground"
               >
                 <RotateCcw size={14} />
                 {t.actions.flip}

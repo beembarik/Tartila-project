@@ -4,8 +4,9 @@ import { AlphabetGrid } from "@/components/AlphabetGrid";
 import { NavigationControls } from "@/components/NavigationControls";
 import { EnhancedAudioPlayer } from "@/components/EnhancedAudioPlayer";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Grid3X3 } from "lucide-react";
+import { BookOpen, Grid3X3, Volume2, X } from "lucide-react";
 import { ArabicLetter } from "@/data/arabicAlphabet";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -15,6 +16,7 @@ const Learn = () => {
   const [isCardFlipped, setIsCardFlipped] = useState(false);
   const [selectedLetter, setSelectedLetter] = useState<ArabicLetter | null>(null);
   const [activeTab, setActiveTab] = useState("flashcards");
+  const [isAudioDialogOpen, setIsAudioDialogOpen] = useState(false);
   const { toast } = useToast();
   const { t, arabicAlphabet } = useLanguage();
 
@@ -45,11 +47,8 @@ const Learn = () => {
   }, [arabicAlphabet.length]);
 
   const handlePlaySound = useCallback(() => {
-    toast({
-      title: t.audio.playing,
-      description: `${currentLetter.name}`,
-    });
-  }, [currentLetter, toast, t]);
+    setIsAudioDialogOpen(true);
+  }, []);
 
   const handleLetterSelect = useCallback((letter: ArabicLetter) => {
     const index = arabicAlphabet.findIndex(l => l.id === letter.id);
@@ -108,15 +107,39 @@ const Learn = () => {
               />
             </div>
 
-            {/* Audio Player placed lower */}
+            {/* Listen Button */}
             <div className="flex justify-center slide-up pt-4">
-              <div className="w-80">
-                <EnhancedAudioPlayer
-                  letterName={currentLetter.name}
-                  arabicLetter={currentLetter.arabic}
-                  letterId={currentLetter.id}
-                />
-              </div>
+              <Dialog open={isAudioDialogOpen} onOpenChange={setIsAudioDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button className="bg-gradient-primary text-primary-foreground hover:shadow-warm flex items-center gap-2">
+                    <Volume2 size={18} />
+                    Listen to {currentLetter.name}
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md">
+                  <DialogHeader className="flex flex-row items-center justify-between pb-4">
+                    <DialogTitle className="text-center flex-1">
+                      Audio Player - {currentLetter.name}
+                    </DialogTitle>
+                    <DialogClose asChild>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0 rounded-full hover:bg-muted"
+                        onClick={() => setIsAudioDialogOpen(false)}
+                      >
+                        <X size={14} />
+                        <span className="sr-only">Close</span>
+                      </Button>
+                    </DialogClose>
+                  </DialogHeader>
+                  <EnhancedAudioPlayer
+                    letterName={currentLetter.name}
+                    arabicLetter={currentLetter.arabic}
+                    letterId={currentLetter.id}
+                  />
+                </DialogContent>
+              </Dialog>
             </div>
           </TabsContent>
 
@@ -136,7 +159,7 @@ const Learn = () => {
               <div className="flex justify-center pt-4">
                 <Button
                   onClick={() => setActiveTab("flashcards")}
-                  className="bg-gradient-primary text-white hover:shadow-rose"
+                  className="bg-gradient-primary text-primary-foreground hover:shadow-warm"
                 >
                   Study {selectedLetter.name} in Detail
                 </Button>
