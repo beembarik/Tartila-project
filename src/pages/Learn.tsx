@@ -4,9 +4,9 @@ import { AlphabetGrid } from "@/components/AlphabetGrid";
 import { NavigationControls } from "@/components/NavigationControls";
 import { EnhancedAudioPlayer } from "@/components/EnhancedAudioPlayer";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Grid3X3, Volume2, X } from "lucide-react";
+import { BookOpen, Grid3X3, Volume2 } from "lucide-react";
 import { ArabicLetter } from "@/data/arabicAlphabet";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -59,8 +59,8 @@ const Learn = () => {
   }, [arabicAlphabet]);
 
   return (
-    <div className="min-h-screen bg-gradient-rainbow py-8 pt-24 relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen flex flex-col bg-gradient-rainbow pt-24">
+      <div className="flex-1 overflow-y-auto container mx-auto px-4 pb-8">
         <div className="text-center mb-8 fade-in">
           <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-float">
             {t.navigation.learn}
@@ -83,7 +83,6 @@ const Learn = () => {
           </TabsList>
 
           <TabsContent value="flashcards" className="space-y-6">
-            {/* Navigation Controls moved to top */}
             <div className="flex justify-center">
               <NavigationControls
                 currentIndex={currentLetterIndex}
@@ -96,18 +95,16 @@ const Learn = () => {
               />
             </div>
 
-            {/* Flashcard with reduced height */}
             <div className="flex justify-center fade-in">
               <AlphabetCard
                 letter={currentLetter}
                 isFlipped={isCardFlipped}
                 onFlip={handleFlip}
                 onPlaySound={handlePlaySound}
-                className="h-[260px] md:h-[340px]" // <-- reduced height
+                className="aspect-[3/4] max-h-[340px]"
               />
             </div>
 
-            {/* Listen Button */}
             <div className="flex justify-center slide-up pt-4">
               <Dialog open={isAudioDialogOpen} onOpenChange={setIsAudioDialogOpen}>
                 <DialogTrigger asChild>
@@ -121,17 +118,6 @@ const Learn = () => {
                     <DialogTitle className="text-center flex-1">
                       Audio Player - {currentLetter.name}
                     </DialogTitle>
-                    <DialogClose asChild>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="h-6 w-6 p-0 rounded-full hover:bg-muted"
-                        onClick={() => setIsAudioDialogOpen(false)}
-                      >
-                        <X size={14} />
-                        <span className="sr-only">Close</span>
-                      </Button>
-                    </DialogClose>
                   </DialogHeader>
                   <EnhancedAudioPlayer
                     letterName={currentLetter.name}
@@ -149,11 +135,13 @@ const Learn = () => {
               <p className="text-muted-foreground">Click on any letter to study it in detail</p>
             </div>
 
-            <AlphabetGrid
-              letters={arabicAlphabet}
-              selectedLetter={selectedLetter}
-              onLetterSelect={handleLetterSelect}
-            />
+            <div className="overflow-x-auto">
+              <AlphabetGrid
+                letters={arabicAlphabet}
+                selectedLetter={selectedLetter}
+                onLetterSelect={handleLetterSelect}
+              />
+            </div>
 
             {selectedLetter && (
               <div className="flex justify-center pt-4">
