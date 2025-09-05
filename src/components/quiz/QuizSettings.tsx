@@ -99,9 +99,13 @@ export const QuizSettings = ({ onStart, onBack }: QuizSettingsProps) => {
                   <Clock className="h-4 w-4" />
                   Enable Timer
                 </Label>
-                <Switch className="text-accent-light bg-primary"
-                  checked={hasTimer}
-                  onCheckedChange={setHasTimer}
+                <Switch
+  checked={hasTimer}
+  onCheckedChange={setHasTimer}
+  colorOn="bg-secondary"
+  colorOff="bg-gray-400"
+  thumbColorOn="bg-accent-light"
+  thumbColorOff="bg-gray-100"
                 />
               </div>
               
