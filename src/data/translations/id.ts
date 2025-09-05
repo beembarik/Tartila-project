@@ -60,7 +60,7 @@ export const idTranslations: TranslationKeys = {
     nextQuestion: "Pertanyaan Selanjutnya",
     finishQuiz: "Selesai Kuis",
     results: "Hasil Kuis",
-    yourScore: "Skor Anda",
+    yourScore: "Skor Kamu",
     restart: "Mulai Ulang",
     chooseAnswer: "Pilih jawaban yang benar:",
     showAnswer: "Lihat Jawaban",
@@ -90,18 +90,18 @@ export const idTranslations: TranslationKeys = {
       interactiveTitle: "Belajar Interaktif",
       interactiveDesc: "Pelajari setiap huruf Arab dengan kartu belajar, pelafalan audio, dan informasi detail tentang makhraj dan karakteristik.",
       quizTitle: "Uji Diri Kamu",
-      quizDesc: "Uji pengetahuan Kamu dengan kuis interaktif. Pilih antara pilihan ganda ala Duolingo atau pengulangan berjangka ala Anki."
+      quizDesc: "Uji pengetahuan Kamu dengan kuis interaktif. Pilih antara Tartila Play dengan pilihan ganda atau Tartila Deck dengan flashcard pengulangan berjangka."
     },
     features: {
       audioTitle: "Pelafalan Audio",
       audioDesc: "Dengarkan pelafalan yang benar dari setiap huruf dengan makharijul huruf yang tepat",
       tajweedTitle: "Kaidah Tajwid",
-      tajweedDesc: "Pelajari karakteristik dan titik artikulasi setiap huruf Arab",
+      tajweedDesc: "Pelajari karakteristik dan makhraj setiap huruf hijaiyah",
       interactiveTitle: "Pembelajaran Interaktif", 
       interactiveDesc: "Kartu belajar yang menarik dengan informasi detail dan contoh"
     },
     footer: {
-      mainText: "Kuasai alfabet Arab dengan pelafalan tajwid yang benar",
+      mainText: "Kuasai huruf hijaiyah dengan pelafalan sesuai makhraj yang benar",
       subText: "Dibuat dengan cinta untuk pelajar Tajwid di seluruh dunia"
     }
   }

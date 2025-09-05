@@ -1,4 +1,4 @@
-const CACHE_NAME = 'arabic-learn-v1';
+const CACHE_NAME = 'Tartila-v1';
 const urlsToCache = [
   '/',
   '/learn',
@@ -12,7 +12,8 @@ const urlsToCache = [
   '/assets/audio/ta.mp3',
   '/assets/audio/tha.mp3',
   '/assets/hero-background.jpg',
-  '/assets/alphabet-illustration.jpg'
+  '/assets/Tartila Logo.png',
+  '/assets/Logo.png'
 ];
 
 self.addEventListener('install', (event) => {
