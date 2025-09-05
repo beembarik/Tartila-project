@@ -134,7 +134,7 @@ const Quiz = () => {
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <Badge variant="outline" className="text-xs">{t.quiz.badges.multipleChoice}</Badge>
-                    <Badge variant="outline" className="text-xs">{t.quiz.badges.tenQuestions}</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.customQuestions}</Badge>
                   </div>
                   <div className="flex items-center gap-2">
                     <Badge variant="outline" className="text-xs">{t.quiz.badges.instantFeedback}</Badge>

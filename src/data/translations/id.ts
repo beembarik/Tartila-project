@@ -73,7 +73,7 @@ export const idTranslations: TranslationKeys = {
     selectLetter: "Pilih huruf yang benar:",
     badges: {
       multipleChoice: "Pilihan Ganda",
-      tenQuestions: "10 Pertanyaan",
+      customQuestions: "Tentukan Sendiri Jumlah Pertanyaan",
       instantFeedback: "Umpan Balik Langsung",
       progressTracking: "Pelacakan Kemajuan",
       flashcards: "Kartu Flash",

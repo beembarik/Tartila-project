@@ -72,7 +72,7 @@ export const enTranslations = {
     selectLetter: "Select the correct letter:",
     badges: {
       multipleChoice: "Multiple Choice",
-      tenQuestions: "10 Questions",
+      customQuestions: "Custom Number of Question",
       instantFeedback: "Instant Feedback",
       progressTracking: "Progress Tracking",
       flashcards: "Flashcards",

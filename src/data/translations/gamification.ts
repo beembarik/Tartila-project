@@ -33,7 +33,7 @@ export const gamificationTranslations = {
     },
     badges: {
       multipleChoice: "Multiple Choice",
-      tenQuestions: "10 Questions",
+      customQuestions: "Custom Number of Question",
       instantFeedback: "Instant Feedback",
       progressTracking: "Progress Tracking",
       flashcards: "Flashcards",
@@ -90,7 +90,7 @@ export const gamificationTranslations = {
     },
     badges: {
       multipleChoice: "Pilihan Ganda",
-      tenQuestions: "10 Pertanyaan",
+      customQuestions: "Tentukan Sendiri Jumlah Pertanyaan",
       instantFeedback: "Umpan Balik Langsung",
       progressTracking: "Pelacakan Kemajuan",
       flashcards: "Kartu Flash",
