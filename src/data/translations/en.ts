@@ -48,10 +48,12 @@ export const enTranslations = {
   
   // Quiz
   quiz: {
-    title: "Arabic Alphabet Quiz",
-    subtitle: "Test your knowledge of the Arabic letters",
+    title: "Tartila Quiz",
+    subtitle: "Test your knowledge of the Arabic letters and ist makharijul hurf.",
     duolingoStyle: "Tartila Play",
+    duolingoDesc: "Multiple choice questions with immediate feedback. Perfect for quick learning sessions.",
     ankiStyle: "Tartila Deck",
+    ankiDesc: "Spaced repetition flashcards with self-assessment. Ideal for deep memorization.",
     question: "What is this letter?",
     score: "Score",
     correct: "Correct!",
@@ -67,7 +69,31 @@ export const enTranslations = {
     again: "Again",
     hard: "Hard",
     good: "Good",
-    selectLetter: "Select the correct letter:"
+    selectLetter: "Select the correct letter:",
+    badges: {
+      multipleChoice: "Multiple Choice",
+      tenQuestions: "10 Questions",
+      instantFeedback: "Instant Feedback",
+      progressTracking: "Progress Tracking",
+      flashcards: "Flashcards",
+      selfAssessment: "Self-Assessment",
+      detailedInfo: "Detailed Info",
+      spacedRepetition: "Spaced Repetition"
+    },
+    buttons: {
+      startPlay: "Start Tartila Play",
+      startDeck: "Start Tartila Deck"
+    },
+    achievementsTitle: "Achievements",
+    featuresTitle: "Why Take Quizzes?",
+    features: {
+      testKnowledge: "Test Knowledge",
+      testKnowledgeDesc: "Evaluate your understanding of Arabic letters and their properties",
+      trackProgress: "Track Progress",
+      trackProgressDesc: "Monitor your learning progress with detailed scoring",
+      reinforceLearning: "Reinforce Learning",
+      reinforceLearningDesc: "Strengthen memory through active recall and repetition"
+    }
   },
   
   // Index page content

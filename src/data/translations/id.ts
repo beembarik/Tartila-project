@@ -49,10 +49,12 @@ export const idTranslations: TranslationKeys = {
   
   // Quiz
   quiz: {
-    title: "Kuis Huruf Hijaiyah",
-    subtitle: "Uji pengetahuan Kamu tentang huruf-huruf Arab",
+    title: "Kuis Tartila",
+    subtitle: "Uji pengetahuan Kamu tentang huruf-huruf hijaiyah dan makhraj-makhrajnya",
     duolingoStyle: "Tartila Play",
+    duolingoDesc: "Pertanyaan pilihan ganda dengan umpan balik langsung. Cocok untuk sesi belajar cepat.",
     ankiStyle: "Tartila Deck",
+    ankiDesc: "Kartu flash pengulangan terjadwal dengan penilaian mandiri. Ideal untuk menghafal mendalam.",
     question: "Huruf apakah ini?",
     score: "Skor",
     correct: "Benar!",
@@ -68,7 +70,31 @@ export const idTranslations: TranslationKeys = {
     again: "Lagi",
     hard: "Sulit",
     good: "Bagus",
-    selectLetter: "Pilih huruf yang benar:"
+    selectLetter: "Pilih huruf yang benar:",
+    badges: {
+      multipleChoice: "Pilihan Ganda",
+      tenQuestions: "10 Pertanyaan",
+      instantFeedback: "Umpan Balik Langsung",
+      progressTracking: "Pelacakan Kemajuan",
+      flashcards: "Kartu Flash",
+      selfAssessment: "Penilaian Mandiri",
+      detailedInfo: "Info Detail",
+      spacedRepetition: "Pengulangan Terjadwal"
+    },
+    buttons: {
+      startPlay: "Mulai Tartila Play",
+      startDeck: "Mulai Tartila Deck"
+    },
+    achievementsTitle: "Pencapaian",
+    featuresTitle: "Mengapa Ikut Kuis?",
+    features: {
+      testKnowledge: "Uji Pengetahuan",
+      testKnowledgeDesc: "Evaluasi pemahaman Anda tentang huruf Arab dan sifatnya",
+      trackProgress: "Lacak Kemajuan",
+      trackProgressDesc: "Pantau kemajuan belajar Anda dengan skor terperinci",
+      reinforceLearning: "Perkuat Pembelajaran",
+      reinforceLearningDesc: "Perkuat ingatan melalui recall aktif dan pengulangan"
+    }
   },
   
   // Index page content  

@@ -23,7 +23,7 @@ const Quiz = () => {
     timerMinutes: 5
   });
   const [quizResults, setQuizResults] = useState<{ score: number; total: number } | null>(null);
-  const { t, arabicAlphabet } = useLanguage();
+  const { t, arabicAlphabet, language } = useLanguage();
   const navigate = useNavigate();
 
   const handleQuizComplete = (score: number, total: number) => {
@@ -129,26 +129,24 @@ const Quiz = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground text-center">
-                  Multiple choice questions with immediate feedback. Perfect for quick learning sessions.
+                  {t.quiz.duolingoDesc}
                 </p>
-                
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-xs">Multiple Choice</Badge>
-                    <Badge variant="outline" className="text-xs">10 Questions</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.multipleChoice}</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.tenQuestions}</Badge>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-xs">Instant Feedback</Badge>
-                    <Badge variant="outline" className="text-xs">Progress Tracking</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.instantFeedback}</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.progressTracking}</Badge>
                   </div>
                 </div>
-
                 <Button
                   onClick={() => setShowSettings(true)}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white"
+                  className="w-full bg-primary hover:bg-primary-light text-white"
                   size="lg"
                 >
-                  Start Duolingo Quiz
+                  {t.quiz.buttons.startPlay}
                 </Button>
               </CardContent>
             </Card>
@@ -165,26 +163,24 @@ const Quiz = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground text-center">
-                  Spaced repetition flashcards with self-assessment. Ideal for deep memorization.
+                  {t.quiz.ankiDesc}
                 </p>
-                
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-xs">Flashcards</Badge>
-                    <Badge variant="outline" className="text-xs">Self-Assessment</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.flashcards}</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.selfAssessment}</Badge>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="text-xs">Detailed Info</Badge>
-                    <Badge variant="outline" className="text-xs">Spaced Repetition</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.detailedInfo}</Badge>
+                    <Badge variant="outline" className="text-xs">{t.quiz.badges.spacedRepetition}</Badge>
                   </div>
                 </div>
-
                 <Button
                   onClick={() => setActiveQuiz('anki')}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full bg-accent hover:bg-secondary text-white"
                   size="lg"
                 >
-                  Start Anki Quiz
+                  {t.quiz.buttons.startDeck}
                 </Button>
               </CardContent>
             </Card>
@@ -192,38 +188,41 @@ const Quiz = () => {
 
           {/* Achievements Section */}
           <div className="mt-16">
+            <h2 className="text-2xl font-bold text-primary mb-8">
+              {t.quiz.achievementsTitle}
+            </h2>
             <AchievementsGrid />
           </div>
 
           {/* Features Section */}
           <div className="mt-16 text-center">
-            <h2 className="text-2xl font-bold text-primary mb-8">Why Take Quizzes?</h2>
+            <h2 className="text-2xl font-bold text-primary mb-8">{t.quiz.featuresTitle}</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="space-y-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <Brain className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-primary">Test Knowledge</h3>
+                <h3 className="font-semibold text-primary">{t.quiz.features.testKnowledge}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Evaluate your understanding of Arabic letters and their properties
+                  {t.quiz.features.testKnowledgeDesc}
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <Trophy className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-primary">Track Progress</h3>
+                <h3 className="font-semibold text-primary">{t.quiz.features.trackProgress}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Monitor your learning progress with detailed scoring
+                  {t.quiz.features.trackProgressDesc}
                 </p>
               </div>
               <div className="space-y-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
                   <RotateCcw className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-primary">Reinforce Learning</h3>
+                <h3 className="font-semibold text-primary">{t.quiz.features.reinforceLearning}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Strengthen memory through active recall and repetition
+                  {t.quiz.features.reinforceLearningDesc}
                 </p>
               </div>
             </div>
