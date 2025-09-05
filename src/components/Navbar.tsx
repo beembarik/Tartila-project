@@ -24,7 +24,7 @@ export const Navbar = () => {
       {/* Capsule Container */}
       <div
         className="flex items-center justify-between gap-4 px-5 py-2 rounded-full 
-        bg-white/80 backdrop-blur-md border border-white/30 
+        bg-white/60 backdrop-blur-md border border-white/30 
         shadow-lg transition-all duration-300"
       >
         {/* Branding */}
@@ -51,7 +51,7 @@ export const Navbar = () => {
               to={item.path}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 isActive(item.path)
-                  ? "bg-accent text-white shadow-md"
+                  ? "bg-accent text-gray-600 shadow-md"
                   : "text-gray-800 hover:bg-primary/10 hover:text-primary"
               }`}
             >

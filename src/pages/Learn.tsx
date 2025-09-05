@@ -59,7 +59,7 @@ const Learn = () => {
   }, [arabicAlphabet]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-rainbow pt-24">
+    <div className="min-h-screen flex flex-col bg-gradient-study pt-24">
       <div className="flex-1 overflow-y-auto container mx-auto px-4 pb-8">
         <div className="text-center mb-8 fade-in">
           <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-float">

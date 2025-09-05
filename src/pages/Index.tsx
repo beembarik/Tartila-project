@@ -9,8 +9,8 @@ import { StatsDisplay } from "@/components/gamification/StatsDisplay";
 import { useGamification } from "@/contexts/GamificationContext";
 import React from "react";
 
-const alphabetIllustration = "/favicon.ico";
-const patternDecoration = "/assets/pattern-decoration.jpg";
+const alphabetIllustration = "/assets/Tartila Logo.png";
+const Logo = "/assets/Logo.png";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -21,19 +21,19 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased pt-20">
+    <div className="min-h-screen bg-gradient-islamic text-foreground antialiased pt-20">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-primary-light text-white">
-        <div className="absolute inset-0 bg-primary-light/50 backdrop-blur-[2px]"></div>
+      <section className="relative min-h-[85vh] flex items-center justify-center text-primary-dark">
+        <div className="absolute inset-0 bg-secondary/80 backdrop-blur-[2px]"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 text-center">
           <div className="flex justify-center mb-8">
             <div className="relative">
               <img
-                src="/icon-192.png"
+                src={alphabetIllustration}
                 alt="Tartila"
-                className="w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white/50 animate-float shadow-2xl"
+                className="w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white/30 animate-float shadow-2xl"
               />
-              <div className="absolute -inset-2 bg-white/10 rounded-full animate-float"></div>
+              <div className="absolute -inset-2 bg-white/20 rounded-full animate-float"></div>
             </div>
           </div>
 
@@ -45,15 +45,15 @@ const Index = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
-            <Badge className="bg-white/20 backdrop-blur-sm text-base px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
+            <Badge className="bg-white/20 backdrop-blur-sm text-primary px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
               <Star className="mr-2 h-4 w-4" />
               {t.index.badges.letters}
             </Badge>
-            <Badge className="bg-white/20 backdrop-blur-sm text-base px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
+            <Badge className="bg-white/20 backdrop-blur-sm text-primary px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
               <Volume2 className="mr-2 h-4 w-4" />
               {t.index.badges.audio}
             </Badge>
-            <Badge className="bg-white/20 backdrop-blur-sm text-base px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
+            <Badge className="bg-white/20 backdrop-blur-sm text-primary px-4 py-2.5 text-sm md:text-base font-semibold tracking-wide border border-white/20 rounded-full">
               <BookOpen className="mr-2 h-4 w-4" />
               {t.index.badges.tajweed}
             </Badge>
@@ -64,7 +64,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="gradient"
-              className="shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              className="font-bold shadow-2xl px-8 py-4 text-primary-foreground md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/learn" className="flex items-center justify-center gap-3">
                 <BookOpen size={20} />
@@ -77,7 +77,7 @@ const Index = () => {
               asChild
               size="lg"
               variant="gold"
-              className="font-bold shadow-2xl px-8 py-4 text-base md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
+              className="font-bold shadow-2xl px-8 py-4 text-primary-foreground md:text-lg tracking-wide rounded-full transition-all duration-300 flex-1 sm:flex-none"
             >
               <Link to="/quiz" className="flex items-center justify-center gap-3">
                 <Brain size={20} />
@@ -90,7 +90,7 @@ const Index = () => {
           {data.totalQuestions > 0 && (
             <div className="mt-8 max-w-sm mx-auto">
               <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 border border-white/30">
-                <div className="flex items-center justify-between text-white text-sm">
+                <div className="flex items-center justify-between text-primary text-sm">
                   <div className="flex items-center gap-2">
                     <Trophy className="w-4 h-4" />
                     <span>Level {data.level}</span>
@@ -115,7 +115,7 @@ const Index = () => {
       </section>
 
       {/* PATH SELECTION */}
-      <section className="bg-background py-16">
+      <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-4xl font-extrabold text-primary mb-6 tracking-tight">
@@ -157,7 +157,7 @@ const Index = () => {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-gradient-primary text-white hover:shadow-warm hover:scale-105 font-bold text-base md:text-lg tracking-wide py-4 rounded-full transition-all duration-300"
+                  className="w-full bg-gradient-primary text-accent hover:shadow-warm hover:scale-105 font-bold text-base md:text-lg tracking-wide py-4 rounded-full transition-all duration-300"
                   size="lg"
                 >
                   <Link to="/learn" className="flex items-center justify-center gap-3">
@@ -174,12 +174,12 @@ const Index = () => {
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-accent rounded-full mb-6 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <Brain className="h-10 w-10 text-white" />
                 </div>
-                <CardTitle className="text-xl md:text-2xl text-primary font-bold tracking-tight mb-3">
+                <CardTitle className="text-xl md:text-2xl text-accent font-bold tracking-tight mb-3">
                   {t.index.sections.quizTitle}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6 px-6 pb-8">
-                <p className="text-muted-foreground text-center text-base md:text-lg leading-relaxed">
+                <p className="text-foreground text-center text-base md:text-lg leading-relaxed">
                   {t.index.sections.quizDesc}
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
@@ -198,7 +198,7 @@ const Index = () => {
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-gradient-accent text-white hover:shadow-gold hover:scale-105 font-bold text-base md:text-lg tracking-wide py-4 rounded-full transition-all duration-300"
+                  className="w-full bg-gradient-accent text-primary hover:shadow-gold hover:scale-105 font-bold text-base md:text-lg tracking-wide py-4 rounded-full transition-all duration-300"
                   size="lg"
                 >
                   <Link to="/quiz" className="flex items-center justify-center gap-3">
@@ -273,19 +273,19 @@ const Index = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-primary text-white py-8 mt-16">
+      <footer className="bg-gradient-dark text-primary-foreground py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <div className="flex justify-center mb-4">
             <img
-              src={patternDecoration}
-              alt="Islamic Pattern"
+              src={Logo}
+              alt="Tartila"
               className="w-16 h-16 rounded opacity-70 shadow-soft"
             />
           </div>
-          <p className="text-white/90 text-base font-medium">
+          <p className="text-primary/90 text-base font-medium">
             {t.index.footer.mainText}
           </p>
-          <p className="text-white/70 text-sm mt-2">
+          <p className="text-charcoal/60 text-sm mt-2">
             {t.index.footer.subText}
           </p>
         </div>

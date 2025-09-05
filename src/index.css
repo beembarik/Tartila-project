@@ -10,13 +10,15 @@
     --islamic-green: 140, 75%, 32%;       /* lebih jenuh & sedikit lebih terang */
     --islamic-green-light: 140, 75%, 50%; /* lebih segar */
     --islamic-green-dark: 140, 75%, 22%;  /* tetap tegas tapi vibrant */
-    --soft-gold: 45, 88%, 68%;            /* lebih kaya warna */
-    --soft-gold-light: 45, 90%, 80%;      /* lebih bersinar */
-    --warm-cream: 40, 30%, 96%;           /* sedikit lebih cerah */
-    --light-sage: 140, 25%, 82%;          /* hijau lembut lebih jelas */
+    --soft-gold: 45, 88%, 55%;            /* lebih kaya warna */
+    --soft-gold-light: 45, 88%, 75%;      /* lebih bersinar */
+    --warm-cream: 40, 50%, 75.8%;           /* sedikit lebih cerah */
+    --light-sage: 140, 25%, 68%;          /* hijau lembut lebih jelas */
     --pure-white: 0, 0%, 100%;            /* tetap putih murni */
     --charcoal: 0, 0%, 12%;               /* lebih pekat untuk kontras */
     --soft-gray: 0, 0%, 42%;              /* sedikit lebih gelap untuk kontras */
+    --lavender-light: 267, 31%, 73%;   /* aksen sekunder lembut */
+    --salmon-pink: 0, 71%, 76%;           /* aksen sekunder gelap */
 
     /* Base */
     --background: var(--warm-cream);
@@ -37,6 +39,8 @@
     /* Secondary (Light Sage) */
     --secondary: var(--light-sage);
     --secondary-foreground: var(--charcoal);
+    --secondary-light: var(--lavender-light);
+    --secondary-dark: var(--salmon-pink);
 
     /* Accent (Soft Gold) */
     --accent: var(--soft-gold);
@@ -56,7 +60,9 @@
     --gradient-primary: linear-gradient(135deg, hsl(var(--islamic-green)), hsl(var(--islamic-green-light)));
     --gradient-warm: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(var(--light-sage)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--soft-gold)), hsl(var(--soft-gold-light)));
-    --gradient-islamic: linear-gradient(90deg, hsl(var(--islamic-green)), hsl(var(--soft-gold)), hsl(var(--light-sage)));
+    --gradient-islamic: linear-gradient(135deg, hsl(var(--light-sage)), hsl(var(--soft-gold-light)), hsl(var(--lavender-light)), hsl(var(--salmon-pink)));
+    --gradient-study: linear-gradient(90deg,hsl(var(--lavender-light)), hsl(var(--salmon-pink)));
+    --gradient-dark: linear-gradient(180deg,hsl(var(--soft-gray)), hsl(var(--charcoal)));
 
     /* Islamic patterns & shadows */
     --pattern-light: var(--light-sage);

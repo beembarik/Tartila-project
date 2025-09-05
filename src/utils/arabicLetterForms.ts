@@ -9,7 +9,33 @@ export interface ComprehensiveLetterForms {
 export const getComprehensiveLetterForms = (letter: ArabicLetter): ComprehensiveLetterForms => {
   const arabicLetter = letter.arabic;
   
-  // Define vowel marks
+  // Special cases for mad letters
+  if (letter.id === 'alif') {
+    return {
+      withVowels: ['أَامَنَ', 'صَابِرَ', 'ذَاكَرَ'],
+      withSukun: ['أَامَنَ', 'صَابِرَ', 'ذَاكَرَ'],
+      withShaddah: ['أَامَنَ', 'صَابِرَ', 'ذَاكَرَ']
+    };
+  }
+  
+  if (letter.id === 'ya-mad') {
+    return {
+      withVowels: ['فِيْهَا', 'قِيْلَ', 'نَفْسِيْ'],
+      withSukun: ['فِيْهَا', 'قِيْلَ', 'نَفْسِيْ'],
+      withShaddah: ['فِيْهَا', 'قِيْلَ', 'نَفْسِيْ']
+    };
+  }
+  
+  if (letter.id === 'waw-mad') {
+    return {
+      withVowels: ['كُلُوْا', 'وَاشْرَبُوْا', 'صَبَرُوْا'],
+      withSukun: ['كُلُوْا', 'وَاشْرَبُوْا', 'صَبَرُوْا'],
+      withShaddah: ['كُلُوْا', 'وَاشْرَبُوْا', 'صَبَرُوْا']
+    };
+  }
+  
+  // Define vowel marks for regular letters
+  
   const fatha = '\u064E'; // َ
   const kasra = '\u0650'; // ِ  
   const damma = '\u064F'; // ُ
@@ -36,5 +62,10 @@ export const getComprehensiveLetterForms = (letter: ArabicLetter): Comprehensive
 };
 
 export const formatComprehensiveDisplay = (forms: ComprehensiveLetterForms): string => {
+  // For mad letters, just show the examples as they are already complete words
+  if (forms.withVowels[0] === forms.withSukun[0] && forms.withSukun[0] === forms.withShaddah[0]) {
+    return forms.withVowels.join(' - ');
+  }
+
   return `${forms.withVowels.join(' ')} - ${forms.withSukun.join(' ')} - ${forms.withShaddah.join(' ')}`;
 };

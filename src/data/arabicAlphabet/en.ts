@@ -7,9 +7,9 @@ export const arabicAlphabetEn: ArabicLetter[] = [
     name: "Alif",
     transliteration: "ā",
     makhraj: "Al-Jawf (الجوف)",
-    makhrajDescription: "The hollow/cavity - air flows freely without obstruction",
+    makhrajDescription: "From the hollow/cavity of the mouth and throat - air flows freely without obstruction - prolonged vowel sound",
     makhrajIllustration: "/assets/makhraj-hollow.jpg",
-    characteristics: ["Harf Madd (Letter of prolongation)", "No sound of its own"],
+    characteristics: ["Mad Letter (Letter of prolongation)", "No sound of its own", "Natural Mad", "Vowel elongation"],
     position: {
       isolated: "ا",
       initial: "ا",
@@ -17,12 +17,12 @@ export const arabicAlphabetEn: ArabicLetter[] = [
       final: "ـا"
     },
     examples: [
-      { word: "أب", meaning: "Father", transliteration: "ab" },
-      { word: "ماء", meaning: "Water", transliteration: "mā'" }
+      { word: "صابر", meaning: "Patient", transliteration: "ṣābir" },
+      { word: "ذاكر", meaning: "Remembering", transliteration: "dhākir" }
     ],
     pronunciation: {
-      description: "A pure vowel sound, elongates the preceding vowel",
-      tips: ["Keep mouth open", "No constriction in throat", "Pure vowel elongation"]
+      description: "A pure vowel sound, Long 'aa' sound - elongated vowel that extends naturally",
+      tips: ["Keep mouth open", "Extend the 'a' sound", "No constriction in throat", "Pure vowel elongation", "Natural prolongation"]
     }
   },
   {
@@ -650,6 +650,31 @@ export const arabicAlphabetEn: ArabicLetter[] = [
     }
   },
   {
+    id: "waw-mad",
+    arabic: "و",
+    name: "Waw Mad",
+    transliteration: "ū",
+    makhraj: "Ash-Shafatayn (الشفتان)",
+    makhrajDescription: "From the lips - prolonged 'oo' sound with rounded lips",
+    makhrajIllustration: "/assets/makhraj-lips.jpg",
+    characteristics: ["Mad letter (prolongation)", "Natural mad", "Long 'oo' vowel"],
+    position: {
+      isolated: "و",
+      initial: "و",
+      medial: "و",
+      final: "و"
+    },
+    examples: [
+      { word: "كلوا", meaning: "Eat (plural)", transliteration: "kulū" },
+      { word: "واشربوا", meaning: "And drink (plural)", transliteration: "washrabū" },
+      { word: "صبروا", meaning: "They were patient", transliteration: "ṣabarū" }
+    ],
+    pronunciation: {
+      description: "Long 'oo' sound - extended vowel with rounded lips",
+      tips: ["Round your lips", "Extend the 'oo' sound", "Natural prolongation"]
+    }
+  },
+  {
     id: "ya",
     arabic: "ي",
     name: "Ya",
@@ -671,6 +696,31 @@ export const arabicAlphabetEn: ArabicLetter[] = [
     pronunciation: {
       description: "Like English 'y' in 'yes'",
       tips: ["Middle of tongue rises", "Voice vibrates"]
+    }
+  },
+  {
+    id: "ya-mad",
+    arabic: "ي",
+    name: "Ya Mad",
+    transliteration: "ī",
+    makhraj: "Al-Jawf (الجوف)",
+    makhrajDescription: "From the hollow cavity of the mouth and throat - prolonged 'ee' sound",
+    makhrajIllustration: "/assets/makhraj-hollow.jpg",
+    characteristics: ["Mad letter (prolongation)", "Natural mad", "Long 'ee' vowel"],
+    position: {
+      isolated: "ي",
+      initial: "ي",
+      medial: "ي",
+      final: "ي"
+    },
+    examples: [
+      { word: "فيها", meaning: "In it", transliteration: "fīhā" },
+      { word: "قيل", meaning: "It was said", transliteration: "qīla" },
+      { word: "نفسي", meaning: "My soul", transliteration: "nafsī" }
+    ],
+    pronunciation: {
+      description: "Long 'ee' sound - extended vowel pronunciation",
+      tips: ["Extend the 'ee' sound", "Natural lengthening", "High tongue position"]
     }
   }
 ];

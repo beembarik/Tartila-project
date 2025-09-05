@@ -1,7 +1,7 @@
 {
-  "name": "Arabic Alphabet Learning",
-  "short_name": "ArabicLearn",
-  "description": "Interactive Arabic alphabet learning app for Muslim youth",
+  "name": "Tartila",
+  "short_name": "Tartila",
+  "description": "Fun Tajweed on the Go",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F5F2",

@@ -41,6 +41,7 @@ export default {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          light: "hsl(var(--lavender-light))",
         },
 
         // Accent (Soft Gold)
@@ -95,7 +96,8 @@ export default {
         "gradient-warm": "var(--gradient-warm)",
         "gradient-accent": "var(--gradient-accent)",
         "gradient-islamic": "var(--gradient-islamic)",
-        "gradient-rainbow": "var(--gradient-rainbow)",
+        "gradient-dark": "var(--gradient-dark)",
+        "gradient-study": "var(--gradient-study)",
       },
       boxShadow: {
         warm: "var(--shadow-warm)",

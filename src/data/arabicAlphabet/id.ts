@@ -7,9 +7,9 @@ export const arabicAlphabetId: ArabicLetter[] = [
     name: "Alif",
     transliteration: "ā",
     makhraj: "Al-Jawf (الجوف)",
-    makhrajDescription: "Rongga/ruang kosong - udara mengalir bebas tanpa halangan",
+    makhrajDescription: "Dari Rongga/ruang kosong mulut dan tenggorokan - udara mengalir bebas tanpa halangan - suara vokal yang dipanjangkan",
     makhrajIllustration: "/assets/makhraj-hollow.jpg",
-    characteristics: ["Harf Madd (Huruf pemanjangan)", "Tidak memiliki bunyi sendiri"],
+    characteristics: ["Huruf Mad (pemanjangan)", "Tidak memiliki bunyi sendiri", ],
     position: {
       isolated: "ا",
       initial: "ا",
@@ -17,8 +17,8 @@ export const arabicAlphabetId: ArabicLetter[] = [
       final: "ـا"
     },
     examples: [
-      { word: "أب", meaning: "Ayah", transliteration: "ab" },
-      { word: "ماء", meaning: "Air", transliteration: "mā'" }
+      { word: "صابر", meaning: "Sabar", transliteration: "ṣābir" },
+      { word: "ذاكر", meaning: "Mengingat", transliteration: "dhākir" }
     ],
     pronunciation: {
       description: "Bunyi vokal murni, memanjangkan vokal sebelumnya",
@@ -650,6 +650,31 @@ export const arabicAlphabetId: ArabicLetter[] = [
     }
   },
   {
+    id: "waw-mad",
+    arabic: "و",
+    name: "Waw Mad",
+    transliteration: "ū",
+    makhraj: "Ash-Shafatayn (الشفتان)",
+    makhrajDescription: "Dari bibir - bunyi 'uu' yang dipanjangkan dengan bibir bulat",
+    makhrajIllustration: "/assets/makhraj-lips.jpg",
+    characteristics: ["Huruf mad (pemanjangan)", "Mad thobi'i", "Vokal 'uu' panjang"],
+    position: {
+      isolated: "و",
+      initial: "و",
+      medial: "و",
+      final: "و"
+    },
+    examples: [
+      { word: "كلوا", meaning: "Makanlah (jamak)", transliteration: "kulū" },
+      { word: "واشربوا", meaning: "Dan minumlah (jamak)", transliteration: "washrabū" },
+      { word: "صبروا", meaning: "Mereka bersabar", transliteration: "ṣabarū" }
+    ],
+    pronunciation: {
+      description: "Bunyi 'uu' panjang - vokal yang diperpanjang dengan bibir bulat",
+      tips: ["Bulatkan bibir", "Perpanjang bunyi 'uu'", "Pemanjangan alami"]
+    }
+  },
+  {
     id: "ya",
     arabic: "ي",
     name: "Ya",
@@ -671,6 +696,31 @@ export const arabicAlphabetId: ArabicLetter[] = [
     pronunciation: {
     description: "Seperti 'y' dalam Bahasa Indonesia 'yakin'",
     tips: ["Tengah lidah naik", "Suara bergetar"]
+    }
+  },
+  {
+    id: "ya-mad",
+    arabic: "ي",
+    name: "Ya Mad",
+    transliteration: "ī",
+    makhraj: "Al-Jawf (الجوف)",
+    makhrajDescription: "Dari rongga mulut dan tenggorokan - bunyi 'ii' yang dipanjangkan",
+    makhrajIllustration: "/assets/makhraj-hollow.jpg",
+    characteristics: ["Huruf mad (pemanjangan)", "Mad thobi'i", "Vokal 'ii' panjang"],
+    position: {
+      isolated: "ي",
+      initial: "ي",
+      medial: "ي",
+      final: "ي"
+    },
+    examples: [
+      { word: "فيها", meaning: "Di dalamnya", transliteration: "fīhā" },
+      { word: "قيل", meaning: "Dikatakan", transliteration: "qīla" },
+      { word: "نفسي", meaning: "Jiwaku", transliteration: "nafsī" }
+    ],
+    pronunciation: {
+      description: "Bunyi 'ii' panjang - pengucapan vokal yang diperpanjang",
+      tips: ["Perpanjang bunyi 'ii'", "Pemanjangan alami", "Posisi lidah tinggi"]
     }
   }
 ];
