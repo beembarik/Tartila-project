@@ -103,9 +103,9 @@ export const QuizSettings = ({ onStart, onBack }: QuizSettingsProps) => {
   checked={hasTimer}
   onCheckedChange={setHasTimer}
   colorOn="bg-secondary"
-  colorOff="bg-gray-400"
+  colorOff="bg-foreground"
   thumbColorOn="bg-accent-light"
-  thumbColorOff="bg-gray-100"
+  thumbColorOff="bg-primary-foreground"
                 />
               </div>
               
