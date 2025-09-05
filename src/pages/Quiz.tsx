@@ -188,9 +188,6 @@ const Quiz = () => {
 
           {/* Achievements Section */}
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-primary mb-8">
-              {t.quiz.achievementsTitle}
-            </h2>
             <AchievementsGrid />
           </div>
 
