@@ -9,7 +9,7 @@ import { StatsDisplay } from "@/components/gamification/StatsDisplay";
 import { useGamification } from "@/contexts/GamificationContext";
 import React from "react";
 
-const alphabetIllustration = "/assets/alphabet-illustration.jpg";
+const alphabetIllustration = "/favicon.ico";
 const patternDecoration = "/assets/pattern-decoration.jpg";
 
 const Index = () => {
@@ -29,8 +29,8 @@ const Index = () => {
           <div className="flex justify-center mb-8">
             <div className="relative">
               <img
-                src={alphabetIllustration}
-                alt="Arabic Alphabet"
+                src="/icon-192.png"
+                alt="Tartila"
                 className="w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-white/50 animate-float shadow-2xl"
               />
               <div className="absolute -inset-2 bg-white/10 rounded-full animate-float"></div>

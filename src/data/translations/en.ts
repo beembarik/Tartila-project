@@ -35,7 +35,7 @@ export const enTranslations = {
   
   // Header
   header: {
-    title: "Arabic Alphabet Learning",
+    title: "Tartila",
     subtitle: "Master the 28 letters with proper pronunciation and tajweed rules",
     language: "Language"
   },
@@ -50,8 +50,8 @@ export const enTranslations = {
   quiz: {
     title: "Arabic Alphabet Quiz",
     subtitle: "Test your knowledge of the Arabic letters",
-    duolingoStyle: "Duolingo Style",
-    ankiStyle: "Anki Style",
+    duolingoStyle: "Tartila Play",
+    ankiStyle: "Tartila Deck",
     question: "What is this letter?",
     score: "Score",
     correct: "Correct!",
@@ -72,7 +72,7 @@ export const enTranslations = {
   
   // Index page content
   index: {
-    heroTitle: "Arabic Alphabet Learning",
+    heroTitle: "Tartila",
     heroSubtitle: "Master the 28 letters with proper pronunciation and tajweed rules",
     badges: {
       letters: "28 Letters",
@@ -101,7 +101,7 @@ export const enTranslations = {
     },
     footer: {
       mainText: "Master the Arabic alphabet with proper tajweed pronunciation",
-      subText: "Built with love for Arabic learners worldwide"
+      subText: "Built with love for Tajweed learners worldwide"
     }
   }
 };

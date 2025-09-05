@@ -36,7 +36,7 @@ export const idTranslations: TranslationKeys = {
   
   // Header
   header: {
-    title: "Pembelajaran Huruf Hijaiyah",
+    title: "Tartila",
     subtitle: "Kuasai 28 huruf dengan pelafalan dan kaidah tajwid yang benar",
     language: "Bahasa"
   },
@@ -50,9 +50,9 @@ export const idTranslations: TranslationKeys = {
   // Quiz
   quiz: {
     title: "Kuis Huruf Hijaiyah",
-    subtitle: "Uji pengetahuan Anda tentang huruf-huruf Arab",
-    duolingoStyle: "Gaya Duolingo",
-    ankiStyle: "Gaya Anki",
+    subtitle: "Uji pengetahuan Kamu tentang huruf-huruf Arab",
+    duolingoStyle: "Tartila Play",
+    ankiStyle: "Tartila Deck",
     question: "Huruf apakah ini?",
     score: "Skor",
     correct: "Benar!",
@@ -73,7 +73,7 @@ export const idTranslations: TranslationKeys = {
   
   // Index page content  
   index: {
-    heroTitle: "Pembelajaran Huruf Hijaiyah",
+    heroTitle: "Tartila",
     heroSubtitle: "Kuasai 28 huruf dengan pelafalan dan kaidah tajwid yang benar",
     badges: {
       letters: "28 Huruf",
@@ -85,12 +85,12 @@ export const idTranslations: TranslationKeys = {
       takeQuiz: "Ikuti Kuis"
     },
     sections: {
-      choosePath: "Pilih Jalur Pembelajaran Anda",
-      pathSubtitle: "Mode belajar interaktif yang dirancang untuk pembelajaran Arab yang efektif",
-      interactiveTitle: "Pembelajaran Interaktif",
+      choosePath: "Pilih Gaya Belajar Kamu",
+      pathSubtitle: "Mode belajar interaktif yang dirancang untuk belajar huruf hijaiyah dan tajwid yang efektif",
+      interactiveTitle: "Belajar Interaktif",
       interactiveDesc: "Pelajari setiap huruf Arab dengan kartu belajar, pelafalan audio, dan informasi detail tentang makhraj dan karakteristik.",
-      quizTitle: "Uji Diri Anda",
-      quizDesc: "Uji pengetahuan Anda dengan kuis interaktif. Pilih antara pilihan ganda ala Duolingo atau pengulangan spasi ala Anki."
+      quizTitle: "Uji Diri Kamu",
+      quizDesc: "Uji pengetahuan Kamu dengan kuis interaktif. Pilih antara pilihan ganda ala Duolingo atau pengulangan berjangka ala Anki."
     },
     features: {
       audioTitle: "Pelafalan Audio",
@@ -102,7 +102,7 @@ export const idTranslations: TranslationKeys = {
     },
     footer: {
       mainText: "Kuasai alfabet Arab dengan pelafalan tajwid yang benar",
-      subText: "Dibuat dengan cinta untuk pelajar Arab di seluruh dunia"
+      subText: "Dibuat dengan cinta untuk pelajar Tajwid di seluruh dunia"
     }
   }
 };
