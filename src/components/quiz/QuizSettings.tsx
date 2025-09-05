@@ -76,7 +76,7 @@ export const QuizSettings = ({ onStart, onBack }: QuizSettingsProps) => {
                 value={numberOfQuestions.toString()}
                 onValueChange={(value) => setNumberOfQuestions(parseInt(value))}
               >
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-accent-light text-muted-foreground">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -95,11 +95,11 @@ export const QuizSettings = ({ onStart, onBack }: QuizSettingsProps) => {
             {/* Timer Settings */}
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <Label className="text-base font-semibold text-primary flex items-center gap-2">
+                <Label className="text-background font-semibold text-primary flex items-center gap-2">
                   <Clock className="h-4 w-4" />
                   Enable Timer
                 </Label>
-                <Switch
+                <Switch className="text-accent-light bg-primary"
                   checked={hasTimer}
                   onCheckedChange={setHasTimer}
                 />
@@ -116,7 +116,7 @@ export const QuizSettings = ({ onStart, onBack }: QuizSettingsProps) => {
                     max="30"
                     value={timerMinutes}
                     onChange={(e) => setTimerMinutes(parseInt(e.target.value) || 5)}
-                    className="w-full"
+                    className="w-full bg-accent-light"
                   />
                   <p className="text-xs text-muted-foreground">
                     Set time limit between 1-30 minutes
