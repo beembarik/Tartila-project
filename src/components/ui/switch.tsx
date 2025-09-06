@@ -7,8 +7,6 @@ interface CustomSwitchProps
   extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> {
   colorOn?: string
   colorOff?: string
-  thumbColorOn?: string
-  thumbColorOff?: string
 }
 
 const Switch = React.forwardRef<
@@ -18,10 +16,8 @@ const Switch = React.forwardRef<
   (
     {
       className,
-      colorOn = "bg-secondary",     // ✅ warna track saat ON
-      colorOff = "bg-primary-foreground",     // ✅ warna track saat OFF
-      thumbColorOn = "bg-accent-light",    // ✅ warna thumb saat ON
-      thumbColorOff = "bg-foreground",   // ✅ warna thumb saat OFF
+      colorOn = "bg-green-600",   // ✅ default warna ON
+      colorOff = "bg-gray-300",   // ✅ default warna OFF
       ...props
     },
     ref
@@ -39,9 +35,8 @@ const Switch = React.forwardRef<
     >
       <SwitchPrimitives.Thumb
         className={cn(
-          `pointer-events-none block h-5 w-5 rounded-full shadow-lg ring-0 transition-transform
-           data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0
-           data-[state=checked]:${thumbColorOn} data-[state=unchecked]:${thumbColorOff}`
+          "pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform " +
+            "data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
         )}
       />
     </SwitchPrimitives.Root>
