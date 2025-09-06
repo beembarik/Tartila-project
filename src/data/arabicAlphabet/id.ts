@@ -32,7 +32,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "b",
     makhraj: "Ash-Shafatayn (الشفتان)",
     makhrajDescription: "Kedua bibir - bunyi dihasilkan dengan menekan bibir bersama-sama",
-    makhrajIllustration: "/assets/makhraj-lips.jpg",
+    makhrajIllustration: "/assets/Ba.png",
     characteristics: ["Jahr (Bersuara)", "Shiddah (Tertahan)", "Qalqalah"],
     position: {
       isolated: "ب",
@@ -560,7 +560,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "m",
     makhraj: "Ash-Shafatayn (الشفتان)",
     makhrajDescription: "Kedua bibir ditutup",
-    makhrajIllustration: "/assets/makhraj-lips.jpg",
+    makhrajIllustration: "/assets/Mim.png",
     characteristics: ["Jahr (Bersuara)", "Tawasuth (Pertengahan)", "Ghunnah (Dengung)"],
     position: {
     isolated: "م",
