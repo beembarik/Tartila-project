@@ -19,9 +19,9 @@ const Switch = React.forwardRef<
     {
       className,
       colorOn = "bg-secondary",     // ✅ warna track saat ON
-      colorOff = "bg-gray-300",     // ✅ warna track saat OFF
+      colorOff = "bg-primary-foreground",     // ✅ warna track saat OFF
       thumbColorOn = "bg-accent-light",    // ✅ warna thumb saat ON
-      thumbColorOff = "bg-white",   // ✅ warna thumb saat OFF
+      thumbColorOff = "bg-foreground",   // ✅ warna thumb saat OFF
       ...props
     },
     ref
