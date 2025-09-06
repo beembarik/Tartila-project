@@ -32,7 +32,7 @@ export const arabicAlphabetEn: ArabicLetter[] = [
     transliteration: "b",
     makhraj: "Ash-Shafatayn (الشفتان)",
     makhrajDescription: "The two lips - sound produced by pressing lips together",
-    makhrajIllustration: "/assets/Ba.jpg",
+    makhrajIllustration: "/assets/Ba.png",
     characteristics: ["Jahr (Voiced)", "Shiddah (Stopped)", "Qalqalah"],
     position: {
       isolated: "ب",
@@ -560,7 +560,7 @@ export const arabicAlphabetEn: ArabicLetter[] = [
     transliteration: "m",
     makhraj: "The two lips (الشفتان)",
     makhrajDescription: "Lips are closed",
-    makhrajIllustration: "/assets/Mim.jpg",
+    makhrajIllustration: "/assets/Mim.png",
     characteristics: ["Jahr (Voiced)", "Tawasuth (Intermediate)", "Ghunnah (Nasal sound)"],
     position: {
       isolated: "م",
