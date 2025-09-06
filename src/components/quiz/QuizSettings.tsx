@@ -100,12 +100,10 @@ export const QuizSettings = ({ onStart, onBack }: QuizSettingsProps) => {
                   Enable Timer
                 </Label>
                 <Switch
-  checked={hasTimer}
-  onCheckedChange={setHasTimer}
-  colorOn="bg-secondary"
-  colorOff="bg-foreground"
-  thumbColorOn="bg-accent-light"
-  thumbColorOff="bg-primary-foreground"
+                  checked={hasTimer}
+                  onCheckedChange={setHasTimer}
+                  colorOn="bg-green-600"
+                  colorOff="bg-gray-400"
                 />
               </div>
               
