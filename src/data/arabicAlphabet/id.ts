@@ -8,7 +8,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ā",
     makhraj: "Al-Jawf (الجوف)",
     makhrajDescription: "Dari Rongga/ruang kosong mulut dan tenggorokan - udara mengalir bebas tanpa halangan - suara vokal yang dipanjangkan",
-    makhrajIllustration: "/assets/makhraj-hollow.jpg",
+    makhrajIllustration: "/assets/Alif.png",
     characteristics: ["Huruf Mad (pemanjangan)", "Tidak memiliki bunyi sendiri", ],
     position: {
       isolated: "ا",
@@ -56,7 +56,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "t",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah menyentuh gusi gigi atas",
-    makhrajIllustration: "/assets/makhraj-tooth-ridge.jpg",
+    makhrajIllustration: "/assets/Ta.png",
     characteristics: ["Hams (Tidak bersuara)", "Shiddah (Tertahan)"],
     position: {
       isolated: "ت",
@@ -80,7 +80,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ts",
     makhraj: "Ujung lidah (بين الأسنان)",
     makhrajDescription: "Ujung lidah di antara atau menyentuh gigi seri atas",
-    makhrajIllustration: "/assets/makhraj-between-teeth.jpg",
+    makhrajIllustration: "/assets/Dzal-Tsa.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)"],
     position: {
       isolated: "ث",
@@ -104,7 +104,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "j",
     makhraj: "Lidah bagian tengah (وسط اللسان)",
     makhrajDescription: "Tengah lidah menyentuh langit-langit lunak",
-    makhrajIllustration: "/assets/makhraj-middle-tongue.jpg",
+    makhrajIllustration: "/assets/Jim.png",
     characteristics: ["Jahr (Bersuara)", "Shiddah (Tertahan)", "Qalqalah"],
     position: {
       isolated: "ج",
@@ -128,7 +128,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ḥ",
     makhraj: "Tenggorokan bagian tengah (وسط الحلق)",
     makhrajDescription: "Bagian tengah tenggorokan",
-    makhrajIllustration: "/assets/makhraj-middle-throat.jpg",
+    makhrajIllustration: "/assets/Hah.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)"],
     position: {
       isolated: "ح",
@@ -152,7 +152,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "kh",
     makhraj: "Tenggorokan bagian atas (أقصى الحلق)",
     makhrajDescription: "Pangkal lidah menyentuh langit-langit lunak",
-    makhrajIllustration: "/assets/makhraj-top-throat.jpg",
+    makhrajIllustration: "/assets/Kha.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "خ",
@@ -176,7 +176,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "d",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah menyentuh gusi gigi atas",
-    makhrajIllustration: "/assets/makhraj-tooth-ridge.jpg",
+    makhrajIllustration: "/assets/Dal-Ta.png",
     characteristics: ["Jahr (Bersuara)", "Shiddah (Tertahan)", "Qalqalah"],
     position: {
     isolated: "د",
@@ -200,7 +200,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "dh",
     makhraj: "Ujung lidah (بين الأسنان)",
     makhrajDescription: "Ujung lidah di antara gigi seri atas dan bawah",
-    makhrajIllustration: "/assets/makhraj-between-teeth.jpg",
+    makhrajIllustration: "/assets/Dzal-Tsa.png",
     characteristics: ["Jahr (Bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "ذ",
@@ -224,7 +224,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "r",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah melengkung ke atas, menyentuh langit-langit dekat gusi",
-    makhrajIllustration: "/assets/makhraj-tooth-ridge.jpg",
+    makhrajIllustration: "/assets/Ra.png",
     characteristics: ["Jahr (Bersuara)", "Tawasuth (Pertengahan)"],
     position: {
     isolated: "ر",
@@ -248,7 +248,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "z",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah di antara gigi atas dan bawah",
-    makhrajIllustration: "/assets/makhraj-between-teeth.jpg",
+    makhrajIllustration: "/assets/Sin-Zay.png",
     characteristics: ["Jahr (Bersuara)", "Rikhawah (Mengalir)", "Shofir (Siulan)"],
     position: {
     isolated: "ز",
@@ -272,7 +272,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "s",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah di antara gigi atas dan bawah",
-    makhrajIllustration: "/assets/makhraj-between-teeth.jpg",
+    makhrajIllustration: "/assets/Sin-Zay.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)", "Shofir (Siulan)"],
     position: {
     isolated: "س",
@@ -296,7 +296,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "sh",
     makhraj: "Lidah bagian tengah (وسط اللسان)",
     makhrajDescription: "Tengah lidah naik ke langit-langit",
-    makhrajIllustration: "/assets/makhraj-middle-tongue.jpg",
+    makhrajIllustration: "/assets/Syin.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "ش",
@@ -320,7 +320,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ṣ",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah di antara gigi bawah dan gigi atas",
-    makhrajIllustration: "/assets/makhraj-between-teeth.jpg",
+    makhrajIllustration: "/assets/Shad.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)", "Shofir (Siulan)", "Iṭbāq (Tertutup)", "Istiʿlāʾ (Terangkat)"],
     position: {
     isolated: "ص",
@@ -344,7 +344,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ḍ",
     makhraj: "Sisi lidah (حافة اللسان)",
     makhrajDescription: "Salah satu atau kedua sisi lidah menyentuh gigi geraham atas",
-    makhrajIllustration: "/assets/makhraj-side-tongue.jpg",
+    makhrajIllustration: "/assets/Dhad.png",
     characteristics: ["Jahr (Bersuara)", "Shiddah (Tertahan)", "Iṭbāq (Tertutup)", "Istiʿlāʾ (Terangkat)"],
     position: {
     isolated: "ض",
@@ -368,7 +368,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ṭ",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah menyentuh gusi gigi atas",
-    makhrajIllustration: "/assets/makhraj-tooth-ridge.jpg",
+    makhrajIllustration: "/assets/Tha.png",
     characteristics: ["Jahr (Bersuara)", "Shiddah (Tertahan)", "Qalqalah", "Iṭbāq (Tertutup)", "Istiʿlāʾ (Terangkat)"],
     position: {
     isolated: "ط",
@@ -388,11 +388,11 @@ export const arabicAlphabetId: ArabicLetter[] = [
   {
     id: "zah",
     arabic: "ظ",
-    name: "Dza",
+    name: "Zha",
     transliteration: "ẓ",
     makhraj: "Ujung lidah (بين الأسنان)",
     makhrajDescription: "Ujung lidah di antara atau menyentuh gigi seri atas",
-    makhrajIllustration: "/assets/makhraj-between-teeth.jpg",
+    makhrajIllustration: "/assets/Zha.png",
     characteristics: ["Jahr (Bersuara)", "Rikhawah (Mengalir)", "Iṭbāq (Tertutup)", "Istiʿlāʾ (Terangkat)"],
     position: {
     isolated: "ظ",
@@ -440,7 +440,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "gh",
     makhraj: "Tenggorokan bagian atas (أقصى الحلق)",
     makhrajDescription: "Pangkal lidah menyentuh langit-langit lunak",
-    makhrajIllustration: "/assets/makhraj-top-throat.jpg",
+    makhrajIllustration: "/assets/Ghain.png",
     characteristics: ["Jahr (Bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "غ",
@@ -488,7 +488,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "q",
     makhraj: "Pangkal lidah (أقصى اللسان)",
     makhrajDescription: "Pangkal lidah terangkat ke langit-langit lunak",
-    makhrajIllustration: "/assets/makhraj-back-tongue.jpg",
+    makhrajIllustration: "/assets/Qaf.png",
     characteristics: ["Jahr (Bersuara)", "Shiddah (Tertahan)", "Qalqalah", "Istiʿlāʾ (Terangkat)"],
     position: {
     isolated: "ق",
@@ -512,7 +512,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "k",
     makhraj: "Pangkal lidah (أقصى اللسان)",
     makhrajDescription: "Pangkal lidah terangkat ke langit-langit lunak",
-    makhrajIllustration: "/assets/makhraj-back-tongue.jpg",
+    makhrajIllustration: "/assets/Kaf.png",
     characteristics: ["Hams (Tidak bersuara)", "Shiddah (Tertahan)"],
     position: {
     isolated: "ك",
@@ -536,7 +536,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "l",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah menyentuh langit-langit keras",
-    makhrajIllustration: "/assets/makhraj-tooth-ridge.jpg",
+    makhrajIllustration: "/assets/Lam-Tarqiq.png",
     characteristics: ["Jahr (Bersuara)", "Tawasuth (Pertengahan)"],
     position: {
     isolated: "ل",
@@ -584,7 +584,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "n",
     makhraj: "Ujung lidah (طرف اللسان)",
     makhrajDescription: "Ujung lidah menyentuh gusi gigi atas",
-    makhrajIllustration: "/assets/makhraj-tooth-ridge.jpg",
+    makhrajIllustration: "/assets/Nun.png",
     characteristics: ["Jahr (Bersuara)", "Tawasuth (Pertengahan)", "Ghunnah (Dengung)"],
     position: {
     isolated: "ن",
@@ -608,7 +608,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "h",
     makhraj: "Tenggorokan bagian bawah (أقصى الحلق)",
     makhrajDescription: "Bagian bawah tenggorokan, dekat dada",
-    makhrajIllustration: "/assets/makhraj-bottom-throat.jpg",
+    makhrajIllustration: "/assets/Ha.png",
     characteristics: ["Hams (Tidak bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "ه",
@@ -681,7 +681,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "y",
     makhraj: "Lidah bagian tengah (وسط اللسان)",
     makhrajDescription: "Tengah lidah naik ke langit-langit",
-    makhrajIllustration: "/assets/makhraj-middle-tongue.jpg",
+    makhrajIllustration: "/assets/Ya.png",
     characteristics: ["Jahr (Bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "ي",
@@ -705,7 +705,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "ī",
     makhraj: "Al-Jawf (الجوف)",
     makhrajDescription: "Dari rongga mulut dan tenggorokan - bunyi 'ii' yang dipanjangkan",
-    makhrajIllustration: "/assets/makhraj-hollow.jpg",
+    makhrajIllustration: "/assets/Ya-Mad.png",
     characteristics: ["Huruf mad (pemanjangan)", "Mad thobi'i", "Vokal 'ii' panjang"],
     position: {
       isolated: "ي",
