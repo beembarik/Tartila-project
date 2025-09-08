@@ -632,7 +632,7 @@ export const arabicAlphabetId: ArabicLetter[] = [
     transliteration: "w",
     makhraj: "Ash-Shafatayn (الشفتان)",
     makhrajDescription: "Kedua bibir dimajukan dan dibulatkan",
-    makhrajIllustration: "/assets/makhraj-lips.jpg",
+    makhrajIllustration: "/assets/waw.png",
     characteristics: ["Jahr (Bersuara)", "Rikhawah (Mengalir)"],
     position: {
     isolated: "و",
