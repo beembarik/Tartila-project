@@ -654,9 +654,9 @@ export const arabicAlphabetId: ArabicLetter[] = [
     arabic: "و",
     name: "Waw Mad",
     transliteration: "ū",
-    makhraj: "Ash-Shafatayn (الشفتان)",
-    makhrajDescription: "Dari bibir - bunyi 'uu' yang dipanjangkan dengan bibir bulat",
-    makhrajIllustration: "/assets/makhraj-lips.jpg",
+    makhraj: "Al-Jawf (الجوف)",
+    makhrajDescription: "Dari rongga mulut dan tenggorokan - bunyi 'uu' yang dipanjangkan,
+    makhrajIllustration: "/assets/waw-mad.png",
     characteristics: ["Huruf mad (pemanjangan)", "Mad thobi'i", "Vokal 'uu' panjang"],
     position: {
       isolated: "و",
